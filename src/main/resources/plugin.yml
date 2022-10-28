@@ -1,0 +1,7 @@
+name: JadedCore
+version: '${project.version}'
+main: net.jadedmc.jadedcore.JadedCore
+api-version: 1.19
+depend: [ PlaceholderAPI ]
+authors: [ JadedMC ]
+website: http://www.jadedmc.net
