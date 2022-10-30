@@ -1,6 +1,7 @@
 package net.jadedmc.jadedcore;
 
 import net.jadedmc.jadedcore.staff.player.StaffPlayerManager;
+import net.jadedmc.jadedcore.utils.chat.commands.AbstractCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class JadedCore extends JavaPlugin {
@@ -16,6 +17,8 @@ public final class JadedCore extends JavaPlugin {
 
         mySQL = new MySQL(this);
         mySQL.openConnection();
+
+        AbstractCommand.registerCommands(this);
     }
 
     @Override

@@ -5,3 +5,23 @@ api-version: 1.19
 depend: [ PlaceholderAPI ]
 authors: [ JadedMC ]
 website: http://www.jadedmc.net
+
+commands:
+  alts:
+    description: View a list of player alts.
+    usage: /alts
+  fakejoin:
+    description: Send a fake join message
+    usage: /<command>
+    aliases: [fj]
+  fakequit:
+    description: Send a fake quit message
+    usage: /<command>
+    aliases: [fq]
+  uuid:
+    description: View a player's uuid.
+    usage: /<command>
+  vanish:
+    description: Toggle vanish mode.
+    usage: /<command>
+    aliases: [v]
