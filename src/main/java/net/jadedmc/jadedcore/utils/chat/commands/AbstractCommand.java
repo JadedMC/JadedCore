@@ -1,6 +1,7 @@
 package net.jadedmc.jadedcore.utils.chat.commands;
 
 import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.misc.APICMD;
 import net.jadedmc.jadedcore.misc.BroadcastCMD;
 import net.jadedmc.jadedcore.staff.commands.*;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
@@ -35,6 +36,7 @@ public abstract class AbstractCommand implements CommandExecutor {
     public static void registerCommands(JadedCore pl) {
         plugin = pl;
         new AltsCMD(pl);
+        new APICMD(pl);
         new BroadcastCMD();
         new FakeJoinCMD();
         new FakeQuitCMD();
