@@ -2,6 +2,7 @@ package net.jadedmc.jadedcore;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -85,9 +86,18 @@ public class MySQL {
                     exception.printStackTrace();
                 }
             }, 504000, 504000);
+
+            {
+                PreparedStatement api_keys = connection.prepareStatement("CREATE TABLE IF NOT EXISTS api_keys (" +
+                        "uuid VARCHAR(36)," +
+                        "apiKey VARCHAR(36)," +
+                        "PRIMARY KEY(uuid, apiKey)" +
+                        ");");
+                api_keys.execute();
+            }
         }
-        catch(SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
+        catch(SQLException | ClassNotFoundException exception) {
+            exception.printStackTrace();
         }
 
     }

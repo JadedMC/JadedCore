@@ -1,0 +1,20 @@
+MySQL:
+  host: localhost
+  port: 3306
+  database: database
+  username: username
+  password: password
+  useSSL: true
+
+Chat:
+  format:
+    prefix: '%luckperms_prefix%'
+    name: '&7%player_name%'
+    suffix: '&8 » '
+    messageColor: '%luckperms_suffix%'
+    message: '%message%'
+  filter:
+    - n+(i|1|l|;|:)+(g|4)+((e|3)+r+|a+|4+)
+    - f+(a|4|@)+g+(o|0|e|3)+(t|7)
+    - f+(a|4|@)+g
+    - r+(e|3)+(t|7)+(a|4|@)+r+d
