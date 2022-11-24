@@ -2,6 +2,8 @@ package net.jadedmc.jadedcore;
 
 import net.jadedmc.jadedcore.chat.filter.FilterManager;
 import net.jadedmc.jadedcore.chat.listeners.AsyncPlayerChatListener;
+import net.jadedmc.jadedcore.chat.listeners.PlayerJoinListener;
+import net.jadedmc.jadedcore.chat.listeners.PlayerQuitListener;
 import net.jadedmc.jadedcore.staff.player.StaffPlayerManager;
 import net.jadedmc.jadedcore.utils.chat.commands.AbstractCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,6 +27,8 @@ public final class JadedCore extends JavaPlugin {
         AbstractCommand.registerCommands(this);
 
         getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
     }
 
     @Override
