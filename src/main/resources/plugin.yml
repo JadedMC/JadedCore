@@ -19,18 +19,23 @@ commands:
   alts:
     description: View a list of player alts.
     usage: /alts
+    permission: jadedcore.alts
   fakejoin:
     description: Send a fake join message
     usage: /<command>
     aliases: [fj]
+    permission: jadedcore.fakejoin
   fakequit:
     description: Send a fake quit message
     usage: /<command>
     aliases: [fq]
+    permission: jadedcore.fakequit
   uuid:
     description: View a player's uuid.
     usage: /<command>
+    permission: jadedcore.uuid
   vanish:
     description: Toggle vanish mode.
     usage: /<command>
     aliases: [v]
+    permission: jadedcore.vanish
