@@ -16,6 +16,10 @@ commands:
   broadcast:
     description: Broadcast command.
     usage: /broadcast
+  chatlog:
+    description: View the chat logs of a player.
+    usage: /chatlog
+    permission: jadedcore.chatlog
   alts:
     description: View a list of player alts.
     usage: /alts
