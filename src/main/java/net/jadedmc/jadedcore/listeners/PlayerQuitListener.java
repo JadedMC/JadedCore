@@ -14,7 +14,7 @@ public class PlayerQuitListener implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        event.setQuitMessage(ChatUtils.translate("&8[&c-&8] &c") + player);
+        event.setQuitMessage(ChatUtils.translate("&8[&c-&8] &c") + player.getName());
 
         Party party = JadedAPI.getPlugin().partyManager().getParty(player);
         if(party != null) {
