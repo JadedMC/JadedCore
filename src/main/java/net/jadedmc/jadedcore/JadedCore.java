@@ -9,6 +9,7 @@ import net.jadedmc.jadedcore.features.player.staff.StaffPlayerManager;
 import net.jadedmc.jadedcore.listeners.AsyncPlayerChatListener;
 import net.jadedmc.jadedcore.listeners.PlayerJoinListener;
 import net.jadedmc.jadedcore.listeners.PlayerQuitListener;
+import net.jadedmc.jadedcore.utils.gui.GUIListeners;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
@@ -39,6 +40,7 @@ public final class JadedCore extends JavaPlugin implements PluginMessageListener
         AbstractCommand.registerCommands(this);
 
         getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(this), this);
+        getServer().getPluginManager().registerEvents(new GUIListeners(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
 
