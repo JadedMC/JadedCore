@@ -1,9 +1,9 @@
-package net.jadedmc.jadedcore.utils.chat.commands;
+package net.jadedmc.jadedcore.commands;
 
 import net.jadedmc.jadedcore.JadedCore;
-import net.jadedmc.jadedcore.misc.APICMD;
-import net.jadedmc.jadedcore.misc.BroadcastCMD;
-import net.jadedmc.jadedcore.staff.commands.*;
+import net.jadedmc.jadedcore.commands.staff.*;
+import net.jadedmc.jadedcore.commands.misc.APICMD;
+import net.jadedmc.jadedcore.commands.misc.BroadcastCMD;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

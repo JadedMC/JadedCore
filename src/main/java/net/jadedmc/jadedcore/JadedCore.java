@@ -1,11 +1,11 @@
 package net.jadedmc.jadedcore;
 
-import net.jadedmc.jadedcore.chat.filter.FilterManager;
-import net.jadedmc.jadedcore.chat.listeners.AsyncPlayerChatListener;
-import net.jadedmc.jadedcore.chat.listeners.PlayerJoinListener;
-import net.jadedmc.jadedcore.chat.listeners.PlayerQuitListener;
-import net.jadedmc.jadedcore.staff.player.StaffPlayerManager;
-import net.jadedmc.jadedcore.utils.chat.commands.AbstractCommand;
+import net.jadedmc.jadedcore.commands.AbstractCommand;
+import net.jadedmc.jadedcore.features.chat.filter.FilterManager;
+import net.jadedmc.jadedcore.features.player.staff.StaffPlayerManager;
+import net.jadedmc.jadedcore.listeners.AsyncPlayerChatListener;
+import net.jadedmc.jadedcore.listeners.PlayerJoinListener;
+import net.jadedmc.jadedcore.listeners.PlayerQuitListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class JadedCore extends JavaPlugin {

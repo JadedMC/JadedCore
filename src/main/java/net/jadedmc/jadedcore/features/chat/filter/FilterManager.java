@@ -1,7 +1,7 @@
-package net.jadedmc.jadedcore.chat.filter;
+package net.jadedmc.jadedcore.features.chat.filter;
 
-import net.jadedmc.jadedcore.chat.filter.filters.RepeatMessageFilter;
-import net.jadedmc.jadedcore.chat.filter.filters.TooFastFilter;
+import net.jadedmc.jadedcore.features.chat.filter.filters.RepeatMessageFilter;
+import net.jadedmc.jadedcore.features.chat.filter.filters.TooFastFilter;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;

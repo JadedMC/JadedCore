@@ -1,4 +1,4 @@
-package net.jadedmc.jadedcore.chat.listeners;
+package net.jadedmc.jadedcore.listeners;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import me.clip.placeholderapi.PlaceholderAPI;

@@ -1,6 +1,6 @@
-package net.jadedmc.jadedcore.misc;
+package net.jadedmc.jadedcore.commands.misc;
 
-import net.jadedmc.jadedcore.utils.chat.commands.AbstractCommand;
+import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import net.jadedmc.jadedcore.utils.chat.StringUtils;
 import org.bukkit.Bukkit;

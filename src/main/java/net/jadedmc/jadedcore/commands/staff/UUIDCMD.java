@@ -1,6 +1,6 @@
-package net.jadedmc.jadedcore.staff.commands;
+package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.utils.chat.commands.AbstractCommand;
+import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

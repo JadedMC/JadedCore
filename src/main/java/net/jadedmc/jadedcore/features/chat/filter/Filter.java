@@ -1,4 +1,4 @@
-package net.jadedmc.jadedcore.chat.filter;
+package net.jadedmc.jadedcore.features.chat.filter;
 
 import org.bukkit.entity.Player;
 

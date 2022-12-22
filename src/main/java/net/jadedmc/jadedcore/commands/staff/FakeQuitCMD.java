@@ -1,21 +1,21 @@
-package net.jadedmc.jadedcore.staff.commands;
+package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.utils.chat.commands.AbstractCommand;
+import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
- * This class runs the fakejoin command, which broadcasts a fake join message.
+ * This class runs the fakejoin command, which broadcasts a fake quit message.
  */
-public class FakeJoinCMD extends AbstractCommand {
+public class FakeQuitCMD extends AbstractCommand {
 
     /**
-     * Creates the /fakejoin command with the permission "jadedcore.fakejoin".
+     * Creates the /fakequit command with the permission "elytracore.fakequit".
      */
-    public FakeJoinCMD() {
-        super("fakejoin", "jadedcore.fakejoin", false);
+    public FakeQuitCMD() {
+        super("fakequit", "elytracore.fakequit", false);
     }
 
     /**
@@ -26,6 +26,6 @@ public class FakeJoinCMD extends AbstractCommand {
     @Override
     public void execute(CommandSender sender, String[] args) {
         Player player = (Player) sender;
-        Bukkit.broadcastMessage(ChatUtils.translate("&8[&a+&8] &a" + player.getName()));
+        Bukkit.broadcastMessage(ChatUtils.translate("&8[&c-&8] &c" + player.getName()));
     }
 }

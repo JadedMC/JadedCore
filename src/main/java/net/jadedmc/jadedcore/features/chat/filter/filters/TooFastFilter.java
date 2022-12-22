@@ -1,6 +1,6 @@
-package net.jadedmc.jadedcore.chat.filter.filters;
+package net.jadedmc.jadedcore.features.chat.filter.filters;
 
-import net.jadedmc.jadedcore.chat.filter.Filter;
+import net.jadedmc.jadedcore.features.chat.filter.Filter;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 

@@ -1,4 +1,4 @@
-package net.jadedmc.jadedcore.staff.player;
+package net.jadedmc.jadedcore.features.player.staff;
 
 import net.jadedmc.jadedcore.JadedCore;
 import org.bukkit.Bukkit;
