@@ -32,7 +32,7 @@ public final class JadedCore extends JavaPlugin implements PluginMessageListener
         settingsManager = new SettingsManager(this);
         staffPlayerManager = new StaffPlayerManager(this);
         filterManager = new FilterManager();
-        partyManager = new PartyManager();
+        partyManager = new PartyManager(this);
 
         mySQL = new MySQL(this);
         mySQL.openConnection();
@@ -45,6 +45,7 @@ public final class JadedCore extends JavaPlugin implements PluginMessageListener
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
 
         getServer().getMessenger().registerIncomingPluginChannel(this, "jadedmc:party", this);
+        getServer().getMessenger().registerOutgoingPluginChannel(this, "jadedmc:party");
     }
 
     @Override

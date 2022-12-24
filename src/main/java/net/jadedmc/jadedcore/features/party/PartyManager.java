@@ -1,11 +1,21 @@
 package net.jadedmc.jadedcore.features.party;
 
+import com.google.common.collect.Iterables;
+import com.google.common.io.ByteArrayDataOutput;
+import com.google.common.io.ByteStreams;
+import net.jadedmc.jadedcore.JadedCore;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.*;
 
 public class PartyManager {
+    private final JadedCore plugin;
     private final Map<UUID, Party> parties = new HashMap<>();
+
+    public PartyManager(JadedCore plugin) {
+        this.plugin = plugin;
+    }
 
     /**
      * Syncs a party from bungeecord.
@@ -37,5 +47,12 @@ public class PartyManager {
         }
 
         return null;
+    }
+
+    public void summonParty(Party party) {
+        ByteArrayDataOutput out = ByteStreams.newDataOutput();
+        out.writeUTF("summon");
+        out.writeUTF(party.getUUID().toString());
+        Iterables.getFirst(Bukkit.getOnlinePlayers(), null).sendPluginMessage(plugin, "jadedmc:party", out.toByteArray());
     }
 }
