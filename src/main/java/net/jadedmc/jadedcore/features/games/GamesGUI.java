@@ -1,6 +1,7 @@
 package net.jadedmc.jadedcore.features.games;
 
 import net.jadedmc.jadedcore.JadedAPI;
+import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import net.jadedmc.jadedcore.utils.gui.CustomGUI;
 import net.jadedmc.jadedcore.utils.item.ItemBuilder;
 import org.bukkit.inventory.ItemStack;
@@ -28,7 +29,8 @@ public class GamesGUI extends CustomGUI {
                 .addLore("")
                 .addLore(ChatPaginator.wordWrap(game.getDescription(), 25), "&7")
                 .addLore("")
-                .addLore("&a▸ Click to Connect");
+                .addLore("&a▸ Click to Connect")
+                .addLore(ChatUtils.parsePlaceholders("&7Join %bungee_" + game.getServer() + "% others playing!"));
         return builder.build();
     }
 

@@ -1,5 +1,6 @@
 package net.jadedmc.jadedcore.utils.chat;
 
+import com.google.common.collect.Iterables;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
@@ -97,6 +98,21 @@ public class ChatUtils {
         }
 
         return arr;
+    }
+
+    /**
+     * Parse placeholders using the first person online.
+     * @param message Message to parse.
+     * @return Parsed string.
+     */
+    public static String parsePlaceholders(String message) {
+
+        // Makes sure there are players online.
+        if(Bukkit.getOnlinePlayers().size() == 0) {
+            return ChatUtils.translate(message);
+        }
+
+        return parsePlaceholders(Iterables.getFirst(Bukkit.getOnlinePlayers(), null), message);
     }
 
     /**
