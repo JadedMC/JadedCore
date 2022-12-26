@@ -43,3 +43,6 @@ commands:
     usage: /<command>
     aliases: [v]
     permission: jadedcore.vanish
+  games:
+    description: View the games available on the server.
+    usage: /<command>
