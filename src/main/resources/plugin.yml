@@ -67,3 +67,8 @@ commands:
     usage: /<command>
     aliases: [v]
     permission: jadedcore.vanish
+  workbench:
+    description: Opens a crafting table.
+    usage: /<command>
+    aliases: [wb,craft]
+    permission: jadedcore.workbench

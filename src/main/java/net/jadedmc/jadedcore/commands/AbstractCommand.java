@@ -51,6 +51,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new RenameCMD();
         new UUIDCMD();
         new VanishCMD(pl);
+        new WorkbenchCMD();
     }
 
     /**
