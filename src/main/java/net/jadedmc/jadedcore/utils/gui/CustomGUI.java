@@ -1,6 +1,8 @@
 package net.jadedmc.jadedcore.utils.gui;
 
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
+import net.jadedmc.jadedcore.utils.item.ItemBuilder;
+import net.jadedmc.jadedcore.utils.xseries.XMaterial;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -44,6 +46,13 @@ public abstract class CustomGUI {
 
     public void delete() {
         inventories.remove(getUUID());
+    }
+
+    public void addFiller(int... slots) {
+        ItemStack filler = new ItemBuilder(XMaterial.GRAY_STAINED_GLASS_PANE).setDisplayName(" ").build();
+        for(int i : slots) {
+            setItem(i, filler);
+        }
     }
 
     public Map<Integer, ClickAction> getActions() {
