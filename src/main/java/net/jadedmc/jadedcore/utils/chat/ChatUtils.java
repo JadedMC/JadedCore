@@ -1,8 +1,10 @@
 package net.jadedmc.jadedcore.utils.chat;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -95,5 +97,15 @@ public class ChatUtils {
         }
 
         return arr;
+    }
+
+    /**
+     * Replace placeholders in a message for a player.
+     * @param player Player to replace placeholders for.
+     * @param message Message to replace them in.
+     * @return Parsed string.
+     */
+    public static String parsePlaceholders(Player player, String message) {
+        return translate(PlaceholderAPI.setPlaceholders(player, message));
     }
 }
