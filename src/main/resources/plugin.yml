@@ -43,6 +43,10 @@ commands:
     usage: /<command>
     aliases: [fq]
     permission: jadedcore.fakequit
+  fly:
+    description: Toggles flight
+    usage: /<command>
+    permission: jadedcore.fly
   games:
     description: View the games available on the server.
     usage: /<command>

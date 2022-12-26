@@ -5,7 +5,6 @@ import net.jadedmc.jadedcore.commands.misc.GamesCMD;
 import net.jadedmc.jadedcore.commands.staff.*;
 import net.jadedmc.jadedcore.commands.misc.APICMD;
 import net.jadedmc.jadedcore.commands.misc.BroadcastCMD;
-import net.jadedmc.jadedcore.features.games.GamesGUI;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -45,6 +44,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new ECSeeCMD();
         new FakeJoinCMD();
         new FakeQuitCMD();
+        new FlyCMD();
         new GamesCMD();
         new InvSeeCMD();
         new UUIDCMD();
