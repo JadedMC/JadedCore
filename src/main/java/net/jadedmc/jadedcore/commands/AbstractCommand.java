@@ -2,6 +2,7 @@ package net.jadedmc.jadedcore.commands;
 
 import net.jadedmc.jadedcore.JadedCore;
 import net.jadedmc.jadedcore.commands.misc.GamesCMD;
+import net.jadedmc.jadedcore.commands.misc.RenameCMD;
 import net.jadedmc.jadedcore.commands.staff.*;
 import net.jadedmc.jadedcore.commands.misc.APICMD;
 import net.jadedmc.jadedcore.commands.misc.BroadcastCMD;
@@ -47,6 +48,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new FlyCMD();
         new GamesCMD();
         new InvSeeCMD();
+        new RenameCMD();
         new UUIDCMD();
         new VanishCMD(pl);
     }

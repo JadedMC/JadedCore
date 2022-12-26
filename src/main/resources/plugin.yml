@@ -54,6 +54,10 @@ commands:
     description: View a player's inventory.
     usage: /<command>
     permission: jadedcore.invsee
+  rename:
+    description: Rename an item in the player's hand.
+    usage: /<command>
+    permission: jadedcore.rename
   uuid:
     description: View a player's uuid.
     usage: /<command>
