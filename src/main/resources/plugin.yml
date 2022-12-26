@@ -33,6 +33,11 @@ commands:
     description: View someone's enderchest.
     usage: /<command>
     permission: jadedcore.ecsee
+  enderchest:
+    description: View your own enderchest.
+    usage: /<command>
+    aliases: [ec]
+    permission: jadedcore.enderchest
   fakejoin:
     description: Send a fake join message
     usage: /<command>
