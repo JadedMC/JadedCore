@@ -46,3 +46,8 @@ commands:
   games:
     description: View the games available on the server.
     usage: /<command>
+  commandspy:
+    description: Spy on commands.
+    usage: /<command>
+    aliases: [cmdspy]
+    permission: jadedcore.commandspy

@@ -41,6 +41,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new APICMD(pl);
         new BroadcastCMD();
         new ChatLogCMD(pl);
+        new CommandSpyCMD(pl);
         new FakeJoinCMD();
         new FakeQuitCMD();
         new GamesCMD();

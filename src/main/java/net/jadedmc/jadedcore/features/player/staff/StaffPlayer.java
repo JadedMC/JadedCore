@@ -87,7 +87,7 @@ public class StaffPlayer {
 
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try {
-                PreparedStatement statement = plugin.mySQL().getConnection().prepareStatement("UPDATE staff_settings SET spy = ? WHERE uuid = ?");
+                PreparedStatement statement = plugin.mySQL().getConnection().prepareStatement("UPDATE staff_settings SET commandSpy = ? WHERE uuid = ?");
                 statement.setBoolean(1, spying);
                 statement.setString(2, player.getUniqueId().toString());
                 statement.executeUpdate();

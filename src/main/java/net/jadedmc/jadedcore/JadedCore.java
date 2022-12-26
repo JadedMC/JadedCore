@@ -6,10 +6,7 @@ import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.features.chat.filter.FilterManager;
 import net.jadedmc.jadedcore.features.party.PartyManager;
 import net.jadedmc.jadedcore.features.player.staff.StaffPlayerManager;
-import net.jadedmc.jadedcore.listeners.AsyncPlayerChatListener;
-import net.jadedmc.jadedcore.listeners.PlayerInteractListener;
-import net.jadedmc.jadedcore.listeners.PlayerJoinListener;
-import net.jadedmc.jadedcore.listeners.PlayerQuitListener;
+import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -42,9 +39,10 @@ public final class JadedCore extends JavaPlugin implements PluginMessageListener
 
         getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListeners(), this);
+        getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
 
         getServer().getMessenger().registerIncomingPluginChannel(this, "jadedmc:party", this);
         getServer().getMessenger().registerOutgoingPluginChannel(this, "jadedmc:party");

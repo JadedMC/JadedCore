@@ -95,6 +95,16 @@ public class MySQL {
                         ");");
                 api_keys.execute();
             }
+
+            {
+                PreparedStatement staff_settings = connection.prepareStatement("CREATE TABLE IF NOT EXISTS staff_settings (" +
+                        "uuid VARCHAR(36)," +
+                        "vanish BOOLEAN DEFAULT FALSE," +
+                        "commandSpy BOOLEAN DEFAULT FALSE," +
+                        "PRIMARY KEY(uuid)" +
+                        ");");
+                staff_settings.execute();
+            }
         }
         catch(SQLException | ClassNotFoundException exception) {
             exception.printStackTrace();
