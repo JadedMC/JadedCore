@@ -45,6 +45,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new FakeQuitCMD();
         new FlyCMD();
         new GamesCMD();
+        new HealCMD();
         new InvSeeCMD();
         new RenameCMD();
         new UUIDCMD();

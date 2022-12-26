@@ -55,6 +55,10 @@ commands:
   games:
     description: View the games available on the server.
     usage: /<command>
+  heal:
+    description: Heals a player
+    usage: /<command>
+    permission: jadedcore.heal
   invsee:
     description: View a player's inventory.
     usage: /<command>
