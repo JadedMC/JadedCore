@@ -45,4 +45,11 @@ public class JadedAPI {
         // Sends the message using the first player online.
         player.sendPluginMessage(plugin, channel, out.toByteArray());
     }
+
+    public static int getServerVersion() {
+        String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
+        int subVersion = Integer.parseInt(version.replace("1_", "").replaceAll("_R\\d", "").replace("v", ""));
+
+        return subVersion;
+    }
 }
