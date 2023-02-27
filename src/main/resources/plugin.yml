@@ -20,6 +20,7 @@ commands:
   broadcast:
     description: Broadcast command.
     usage: /broadcast
+    aliases: [bc]
   chatlog:
     description: View the chat logs of a player.
     usage: /chatlog
