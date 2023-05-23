@@ -1,26 +1,15 @@
 package net.jadedmc.jadedcore;
 
-import com.google.common.io.ByteArrayDataInput;
-import com.google.common.io.ByteStreams;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
-import net.jadedmc.jadedcore.features.chat.filter.FilterManager;
-import net.jadedmc.jadedcore.features.party.PartyManager;
 import net.jadedmc.jadedcore.features.player.staff.StaffPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.plugin.messaging.PluginMessageListener;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.UUID;
-
-public final class JadedCore extends JavaPlugin implements PluginMessageListener {
+public final class JadedCore extends JavaPlugin{
     private MySQL mySQL;
     private SettingsManager settingsManager;
     private StaffPlayerManager staffPlayerManager;
-    private FilterManager filterManager;
-    private PartyManager partyManager;
 
     @Override
     public void onEnable() {
@@ -29,56 +18,19 @@ public final class JadedCore extends JavaPlugin implements PluginMessageListener
 
         settingsManager = new SettingsManager(this);
         staffPlayerManager = new StaffPlayerManager(this);
-        filterManager = new FilterManager();
-        partyManager = new PartyManager(this);
 
         mySQL = new MySQL(this);
         mySQL.openConnection();
 
         AbstractCommand.registerCommands(this);
 
-        getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListeners(), this);
         getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
 
-        getServer().getMessenger().registerIncomingPluginChannel(this, "jadedmc:party", this);
-        getServer().getMessenger().registerOutgoingPluginChannel(this, "jadedmc:party");
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-    }
-
-    @Override
-    public void onPluginMessageReceived(String channel, @NotNull Player player, byte[] bytes) {
-        if (!channel.equalsIgnoreCase( "jadedmc:party")) {
-            return;
-        }
-
-        ByteArrayDataInput in = ByteStreams.newDataInput(bytes);
-        String subChannel = in.readUTF();
-
-        switch (subChannel.toLowerCase()) {
-            case "sync" -> {
-                String message = in.readUTF();
-                System.out.println("[Party Sync] " + message);
-                partyManager.syncParty(message);
-            }
-
-            case "disband" -> {
-                String message = in.readUTF();
-                System.out.println("[Party Disband] " + message);
-                partyManager.disbandParty(UUID.fromString(message));
-            }
-            default -> System.out.println(channel);
-        }
-    }
-    /**
-     * Get the filter manager, which manages the chat filter.
-     * @return Filter manager.
-     */
-    public FilterManager filterManager() {
-        return  filterManager;
     }
 
     /**
@@ -87,11 +39,6 @@ public final class JadedCore extends JavaPlugin implements PluginMessageListener
      */
     public MySQL mySQL() {
         return mySQL;
-    }
-
-
-    public PartyManager partyManager() {
-        return partyManager;
     }
 
     /**
