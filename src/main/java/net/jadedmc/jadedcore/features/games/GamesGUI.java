@@ -4,6 +4,7 @@ import net.jadedmc.jadedcore.JadedAPI;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import net.jadedmc.jadedcore.utils.gui.CustomGUI;
 import net.jadedmc.jadedcore.utils.item.ItemBuilder;
+import net.jadedmc.jadedcore.utils.xseries.XMaterial;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.ChatPaginator;
 
@@ -23,7 +24,13 @@ public class GamesGUI extends CustomGUI {
     }
 
     private ItemStack getGameIcon(Game game) {
-        ItemBuilder builder = new ItemBuilder(game.getIconMaterial())
+        XMaterial material = game.getIconMaterial();
+
+        if(JadedAPI.getServerVersion() < 9 && material == XMaterial.ELYTRA) {
+            material = XMaterial.FEATHER;
+        }
+
+        ItemBuilder builder = new ItemBuilder(material)
                 .setDisplayName("&a&l" + game.getName())
                 .addLore("&8" + game.getType())
                 .addLore("")
