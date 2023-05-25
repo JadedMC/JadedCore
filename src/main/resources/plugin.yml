@@ -86,3 +86,5 @@ commands:
     usage: /<command>
     aliases: [wb,craft]
     permission: jadedcore.workbench
+  center:
+    description: Center yourself on a block.
