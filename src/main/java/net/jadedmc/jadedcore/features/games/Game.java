@@ -7,7 +7,10 @@ import net.jadedmc.jadedcore.utils.xseries.XMaterial;
  */
 public enum Game {
     ELYTRAPVP("ElytraPvP", XMaterial.ELYTRA, GameType.PERSISTENT, "Action-Packed pvp in the air using bows!", "elytrapvp"),
-    CACTUS_RUSH("Cactus Rush", XMaterial.CACTUS, GameType.COMPETITIVE, "Team-Based Cactus Fighting Minigame", "cactusrush");
+    TURFWARS("Turf Wars", XMaterial.BOW, GameType.COMPETITIVE, "Advance your team's territory by killing other players.", "turfwars"),
+    CACTUS_RUSH("Cactus Rush", XMaterial.CACTUS, GameType.COMPETITIVE, "Team-Based Cactus Fighting Minigame.", "cactusrush"),
+    HOUSING("Housing", XMaterial.DARK_OAK_DOOR, GameType.PERSISTENT, "Create in your own mini-world, or visit someone else's!", "housing"),
+    LOBBY("Main Lobby", XMaterial.CRAFTING_TABLE, GameType.NONE, "", "lobby");
 
     private final String name;
     private final XMaterial iconMaterial;

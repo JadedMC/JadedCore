@@ -11,12 +11,15 @@ import org.bukkit.util.ChatPaginator;
 public class GamesGUI extends CustomGUI {
 
     public GamesGUI() {
-        super(45, "Games");
+        super(54, "Games");
 
-        addFiller(0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44);
+        addFiller(0,1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
 
         addGame(20, Game.ELYTRAPVP);
+        addGame(22, Game.TURFWARS);
         addGame(24, Game.CACTUS_RUSH);
+        addGame(30, Game.HOUSING);
+        addGame(32, Game.LOBBY);
     }
 
     private void addGame(int slot, Game game) {
@@ -28,6 +31,15 @@ public class GamesGUI extends CustomGUI {
 
         if(JadedAPI.getServerVersion() < 9 && material == XMaterial.ELYTRA) {
             material = XMaterial.FEATHER;
+        }
+
+        if(game == Game.LOBBY) {
+            return new ItemBuilder(material)
+                    .setDisplayName("&a&l" + game.getName())
+                    .addLore("")
+                    .addLore("&a▸ Click to Connect")
+                    .addLore(ChatUtils.parsePlaceholders("&7Join %bungee_" + game.getServer() + "% others playing!"))
+                    .build();
         }
 
         ItemBuilder builder = new ItemBuilder(material)

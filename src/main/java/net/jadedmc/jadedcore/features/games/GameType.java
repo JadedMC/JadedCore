@@ -5,7 +5,8 @@ package net.jadedmc.jadedcore.features.games;
  */
 public enum GameType {
     PERSISTENT("Persistent Game"),
-    COMPETITIVE("Competitive");
+    COMPETITIVE("Competitive"),
+    NONE("");
 
     private final String name;
     GameType(String name) {
