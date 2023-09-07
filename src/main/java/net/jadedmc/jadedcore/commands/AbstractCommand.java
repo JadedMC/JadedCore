@@ -53,6 +53,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new VanishCMD(pl);
         new WorkbenchCMD();
         new CenterCMD();
+        new RulesCMD();
     }
 
     /**
