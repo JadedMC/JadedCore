@@ -54,6 +54,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new WorkbenchCMD();
         new CenterCMD();
         new RulesCMD();
+        new DiscordCMD();
     }
 
     /**

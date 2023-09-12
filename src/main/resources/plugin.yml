@@ -90,3 +90,5 @@ commands:
     description: Center yourself on a block.
   rules:
     description: View the server rules.
+  discord:
+    description: View the server discord.
