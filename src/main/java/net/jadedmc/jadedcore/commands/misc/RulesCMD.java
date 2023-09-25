@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 public class RulesCMD extends AbstractCommand {
 
     public RulesCMD() {
-        super("rules,", "", true);
+        super("rules", "", true);
     }
 
     @Override

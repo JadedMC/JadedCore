@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 public class DiscordCMD extends AbstractCommand {
 
     public DiscordCMD() {
-        super("discord,", "", true);
+        super("discord", "", true);
     }
 
     @Override
