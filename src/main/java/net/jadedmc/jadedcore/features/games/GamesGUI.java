@@ -16,10 +16,10 @@ public class GamesGUI extends CustomGUI {
         addFiller(0,1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
 
         addGame(20, Game.ELYTRAPVP);
-        addGame(22, Game.TURFWARS);
-        addGame(24, Game.CACTUS_RUSH);
-        addGame(30, Game.HOUSING);
-        addGame(32, Game.LOBBY);
+        //addGame(22, Game.TURFWARS);
+        addGame(22, Game.CACTUS_RUSH);
+        addGame(24, Game.HOUSING);
+        addGame(41, Game.LOBBY);
     }
 
     private void addGame(int slot, Game game) {
