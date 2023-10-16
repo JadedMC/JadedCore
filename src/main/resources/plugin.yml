@@ -2,7 +2,7 @@ name: JadedCore
 version: '${project.version}'
 main: net.jadedmc.jadedcore.JadedCore
 api-version: 1.19
-depend: [ PlaceholderAPI ]
+depend: [ PlaceholderAPI, LuckPerms ]
 authors: [ JadedMC ]
 website: http://www.jadedmc.net
 
@@ -92,3 +92,5 @@ commands:
     description: View the server rules.
   discord:
     description: View the server discord.
+  rank:
+    description: Debug command for the rank system.

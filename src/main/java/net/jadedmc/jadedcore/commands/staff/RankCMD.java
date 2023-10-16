@@ -22,32 +22,35 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  */
-package net.jadedmc.jadedcore.listeners;
+package net.jadedmc.jadedcore.commands.staff;
 
 import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.commands.AbstractCommand;
+import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedcore.utils.chat.ChatUtils;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 
-public class PlayerJoinListener implements Listener {
+public class RankCMD extends AbstractCommand {
     private final JadedCore plugin;
 
-    public PlayerJoinListener(JadedCore plugin) {
+    /**
+     * Creates the /rank, which is a debug command for ranks.
+     */
+    public RankCMD(final JadedCore plugin) {
+        super("rank", "jadedcore.rank", false);
         this.plugin = plugin;
     }
 
-    @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
-        event.setJoinMessage(ChatUtils.translate("&8[&a+&8] &a") + event.getPlayer().getName());
+    /**
+     * This is the code that runs when the command is sent.
+     * @param sender The player (or console) that sent the command.
+     * @param args The arguments of the command.
+     */
+    public void execute(CommandSender sender, String[] args) {
+        Player player = (Player) sender;
+        JadedPlayer jadedPlayer = plugin.jadedPlayerManager().getPlayer(player);
 
-        Player player = event.getPlayer();
-
-        plugin.jadedPlayerManager().addPlayer(player);
-
-        if(player.hasPermission("jadedmc.staff")) {
-            plugin.staffPlayerManager().addPlayer(player);
-        }
+        ChatUtils.chat(player, "&aRank: " + jadedPlayer.getRank().getName());
     }
 }

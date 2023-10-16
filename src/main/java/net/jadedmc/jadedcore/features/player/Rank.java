@@ -60,6 +60,15 @@ public enum Rank {
     }
 
     /**
+     * Get a rank from its name.
+     * @param name Name of the rank.
+     * @return Resulting rank.
+     */
+    public static Rank fromName(String name) {
+        return Rank.valueOf(name.toUpperCase());
+    }
+
+    /**
      * Gets the rank's chat color.
      * @return Chat color of the rank.
      */

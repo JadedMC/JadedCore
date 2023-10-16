@@ -22,32 +22,51 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  */
-package net.jadedmc.jadedcore.listeners;
+package net.jadedmc.jadedcore.features.player;
 
 import net.jadedmc.jadedcore.JadedCore;
-import net.jadedmc.jadedcore.utils.chat.ChatUtils;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 
-public class PlayerJoinListener implements Listener {
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * This class manages the Jaded Player object, which stores general data for players, such as their current rank.
+ */
+public class JadedPlayerManager {
     private final JadedCore plugin;
+    private final Map<Player, JadedPlayer> jadedPlayers = new HashMap<>();
 
-    public PlayerJoinListener(JadedCore plugin) {
+    /**
+     * Initializes the Jaded Player Manager.
+     * @param plugin Instance of the plugin.
+     */
+    public JadedPlayerManager(final JadedCore plugin) {
         this.plugin = plugin;
     }
 
-    @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
-        event.setJoinMessage(ChatUtils.translate("&8[&a+&8] &a") + event.getPlayer().getName());
+    /**
+     * Add a player to the player list.
+     * @param player Player to add.
+     */
+    public void addPlayer(Player player) {
+        jadedPlayers.put(player, new JadedPlayer(plugin, player));
+    }
 
-        Player player = event.getPlayer();
+    /**
+     * Get the JadedPlayer of a player
+     * @param player Player to get JadedPlayer of.
+     * @return JadedPlayer of the player.
+     */
+    public JadedPlayer getPlayer(Player player) {
+        return jadedPlayers.get(player);
+    }
 
-        plugin.jadedPlayerManager().addPlayer(player);
-
-        if(player.hasPermission("jadedmc.staff")) {
-            plugin.staffPlayerManager().addPlayer(player);
-        }
+    /**
+     * Remove a player from the player list.
+     * @param player Player to remove.
+     */
+    public void removePlayer(Player player) {
+        jadedPlayers.remove(player);
     }
 }
