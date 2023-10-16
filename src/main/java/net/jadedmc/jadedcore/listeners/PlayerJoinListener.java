@@ -40,6 +40,8 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        event.joinMessage(null);
+
         Player player = event.getPlayer();
         plugin.jadedPlayerManager().addPlayer(player).thenAccept(jadedPlayer -> {
 
