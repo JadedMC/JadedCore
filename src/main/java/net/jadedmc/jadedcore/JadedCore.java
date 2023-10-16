@@ -58,6 +58,8 @@ public final class JadedCore extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
 
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+
+        new Placeholders(this).register();
     }
 
     /**
