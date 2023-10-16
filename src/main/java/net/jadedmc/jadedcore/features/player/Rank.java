@@ -85,7 +85,7 @@ public enum Rank {
             return "";
         }
 
-        return displayName;
+        return displayName + " ";
     }
 
     /**
