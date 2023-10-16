@@ -25,7 +25,7 @@
 package net.jadedmc.jadedcore.listeners;
 
 import net.jadedmc.jadedcore.JadedCore;
-import net.jadedmc.jadedcore.utils.chat.ChatUtils;
+import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -42,9 +42,14 @@ public class PlayerJoinListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         plugin.jadedPlayerManager().addPlayer(player).thenAccept(jadedPlayer -> {
-           // To Do: Join Stuff.
-        });
 
-        event.setJoinMessage(ChatUtils.translate("&8[&a+&8] &a") + event.getPlayer().getName());
+            // Join Message
+            switch (jadedPlayer.getRank()) {
+                case AMETHYST -> ChatUtils.broadcast(player.getWorld(), "&5>&f>&5> &lAmethyst &7" + player.getName() + " &ahas joined the lobby! &5<&f<&5<");
+                case SAPPHIRE -> ChatUtils.broadcast(player.getWorld(), "&9>&f>&9> &lSapphire &7" + player.getName() + " &ahas joined the lobby! &9<&f<&9<");
+                case JADED -> ChatUtils.broadcast(player.getWorld(), "&a>&f>&a> &lJaded &7" + player.getName() + " &ahas joined the lobby! &a<&f<&a<");
+                default -> ChatUtils.broadcast(player.getWorld(), "&8[&a+&8] &a" + player.getName());
+            }
+        });
     }
 }
