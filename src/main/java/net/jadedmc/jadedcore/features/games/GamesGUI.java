@@ -19,7 +19,7 @@ public class GamesGUI extends CustomGUI {
         //addGame(22, Game.TURFWARS);
         addGame(22, Game.CACTUS_RUSH);
         addGame(24, Game.HOUSING);
-        addGame(41, Game.LOBBY);
+        addGame(40, Game.LOBBY);
     }
 
     private void addGame(int slot, Game game) {
