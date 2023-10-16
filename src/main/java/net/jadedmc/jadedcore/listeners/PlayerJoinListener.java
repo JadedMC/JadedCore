@@ -40,14 +40,11 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        event.setJoinMessage(ChatUtils.translate("&8[&a+&8] &a") + event.getPlayer().getName());
-
         Player player = event.getPlayer();
+        plugin.jadedPlayerManager().addPlayer(player).thenAccept(jadedPlayer -> {
+           // To Do: Join Stuff.
+        });
 
-        plugin.jadedPlayerManager().addPlayer(player);
-
-        if(player.hasPermission("jadedmc.staff")) {
-            plugin.staffPlayerManager().addPlayer(player);
-        }
+        event.setJoinMessage(ChatUtils.translate("&8[&a+&8] &a") + event.getPlayer().getName());
     }
 }

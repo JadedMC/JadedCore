@@ -44,7 +44,6 @@ public class PlayerQuitListener implements Listener {
 
         event.setQuitMessage(ChatUtils.translate("&8[&c-&8] &c") + player.getName());
 
-        plugin.staffPlayerManager().removePlayer(player);
         plugin.jadedPlayerManager().removePlayer(player);
     }
 

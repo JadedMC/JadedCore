@@ -26,7 +26,6 @@ package net.jadedmc.jadedcore;
 
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.features.player.JadedPlayerManager;
-import net.jadedmc.jadedcore.features.player.staff.StaffPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,7 +33,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class JadedCore extends JavaPlugin{
     private MySQL mySQL;
     private SettingsManager settingsManager;
-    private StaffPlayerManager staffPlayerManager;
     private JadedPlayerManager jadedPlayerManager;
 
     @Override
@@ -44,7 +42,6 @@ public final class JadedCore extends JavaPlugin{
 
         settingsManager = new SettingsManager(this);
         jadedPlayerManager = new JadedPlayerManager(this);
-        staffPlayerManager = new StaffPlayerManager(this);
 
         mySQL = new MySQL(this);
         mySQL.openConnection();
@@ -84,13 +81,5 @@ public final class JadedCore extends JavaPlugin{
      */
     public SettingsManager settingsManager() {
         return settingsManager;
-    }
-
-    /**
-     * Get the Staff Player manager, which manages StaffPlayer objects.
-     * @return Staff player manager.
-     */
-    public StaffPlayerManager staffPlayerManager() {
-        return staffPlayerManager;
     }
 }
