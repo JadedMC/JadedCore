@@ -65,8 +65,6 @@ public abstract class AbstractCommand implements CommandExecutor {
         new CommandSpyCMD(pl);
         new ECSeeCMD();
         new EnderchestCMD();
-        new FakeJoinCMD();
-        new FakeQuitCMD();
         new FeedCMD();
         new FlyCMD();
         new GamesCMD();
