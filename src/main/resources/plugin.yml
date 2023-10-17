@@ -84,3 +84,5 @@ commands:
     description: View the server discord.
   rank:
     description: Debug command for the rank system.
+  profile:
+    description: View a player's profile.

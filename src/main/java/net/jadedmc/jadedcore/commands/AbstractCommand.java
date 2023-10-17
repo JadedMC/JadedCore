@@ -78,6 +78,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new RulesCMD();
         new DiscordCMD();
         new RankCMD(pl);
+        new ProfileCMD(pl);
     }
 
     /**

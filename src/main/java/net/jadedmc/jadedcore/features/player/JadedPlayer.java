@@ -32,6 +32,7 @@ import org.bukkit.entity.Player;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 /**
  * Represents a Player on the server. Stores plugin-specific data about them.
@@ -44,6 +45,9 @@ public class JadedPlayer {
 
     private boolean spying = false;
     private boolean vanished = false;
+    private int experience = 0;
+    private int level = 1;
+    private Timestamp firstJoined;
 
     /**
      * Creates the JadedPlayer
@@ -56,6 +60,22 @@ public class JadedPlayer {
 
         // Update the player's rank.
         this.rank = Rank.fromName(LuckPermsProvider.get().getUserManager().getUser(player.getUniqueId()).getPrimaryGroup());
+
+        // Player Info
+        try {
+            PreparedStatement statement = plugin.mySQL().getConnection().prepareStatement("SELECT * FROM player_info where uuid = ? LIMIT 1");
+            statement.setString(1, player.getUniqueId().toString());
+            ResultSet resultSet = statement.executeQuery();
+
+            if(resultSet.next()) {
+                level = resultSet.getInt("level");
+                experience = resultSet.getInt("experience");
+                firstJoined = resultSet.getTimestamp("firstOnline");
+            }
+        }
+        catch (SQLException exception) {
+            exception.printStackTrace();
+        }
 
         // Staff settings.
         if(rank.isStaffRank()) {
@@ -81,6 +101,18 @@ public class JadedPlayer {
                 exception.printStackTrace();
             }
         }
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public Timestamp getFirstJoined() {
+        return firstJoined;
     }
 
     /**
