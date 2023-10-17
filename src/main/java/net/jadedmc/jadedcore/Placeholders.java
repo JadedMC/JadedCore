@@ -2,6 +2,7 @@ package net.jadedmc.jadedcore;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
+import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -89,6 +90,18 @@ class Placeholders extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player player, String identifier) {
         JadedPlayer jadedPlayer = plugin.jadedPlayerManager().getPlayer(player);
+
+        if(identifier.contains("rank_displayname_legacy")) {
+            return ChatUtils.toLegacy(jadedPlayer.getRank().getDisplayName());
+        }
+
+        if(identifier.contains("rank_chat_prefix_legacy")) {
+            return ChatUtils.toLegacy(jadedPlayer.getRank().getChatPrefix());
+        }
+
+        if(identifier.contains("rank_chat_color_legacy")) {
+            return ChatUtils.toLegacy(jadedPlayer.getRank().getChatColor());
+        }
 
         if(identifier.contains("rank_displayname")) {
             return jadedPlayer.getRank().getDisplayName();
