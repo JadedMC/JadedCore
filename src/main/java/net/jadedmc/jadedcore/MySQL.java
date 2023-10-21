@@ -105,6 +105,29 @@ public class MySQL {
                         ");");
                 staff_settings.execute();
             }
+
+            {
+                PreparedStatement achievements_list = connection.prepareStatement("CREATE TABLE IF NOT EXISTS achievements_list (" +
+                        "id VARCHAR(36)," +
+                        "mode VARCHAR(36)," +
+                        "name VARCHAR(36)," +
+                        "description VARCHAR(128)," +
+                        "achievementPoints INT DEFAULT 0, " +
+                        "rewards VARCHAR(256)," +
+                        "PRIMARY KEY(id)" +
+                        ");");
+                achievements_list.execute();
+            }
+
+            {
+                PreparedStatement player_achievements = connection.prepareStatement("CREATE TABLE IF NOT EXISTS player_achievements (" +
+                        "uuid VARCHAR(36)," +
+                        "achievementID VARCHAR(36), " +
+                        "time TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
+                        "PRIMARY KEY(uuid,achievementID)" +
+                        ");");
+                player_achievements.execute();
+            }
         }
         catch(SQLException | ClassNotFoundException exception) {
             exception.printStackTrace();

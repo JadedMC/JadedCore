@@ -52,6 +52,8 @@ public class PlayerJoinListener implements Listener {
                 case JADED -> ChatUtils.broadcast(player.getWorld(), "&a>&f>&a> &lJaded &7" + player.getName() + " &ahas joined the lobby! &a<&f<&a<");
                 default -> ChatUtils.broadcast(player.getWorld(), "&8[&a+&8] &a" + player.getName());
             }
+
+            plugin.achievementManager().getAchievement("general_1").unlock(player);
         });
     }
 }

@@ -1,6 +1,8 @@
 package net.jadedmc.jadedcore.features;
 
 import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.features.achievements.Achievement;
+import net.jadedmc.jadedcore.features.achievements.AchievementsGUI;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedcore.utils.gui.CustomGUI;
 import net.jadedmc.jadedutils.items.ItemBuilder;
@@ -34,9 +36,16 @@ public class ProfileGUI extends CustomGUI {
                 .build();
         setItem(22, characterInfo);
 
+        int achievementPoints = 0;
+        for(Achievement achievement : jadedPlayer.getAchievements()) {
+            achievementPoints += achievement.getPoints();
+        }
+
         ItemStack achievements = new ItemBuilder(Material.DIAMOND)
                 .setDisplayName("<green><bold>Achievements")
+                .addLore("<gray>Unlocked: <green>" + jadedPlayer.getAchievements().size())
+                .addLore("<gray>Achievement Points: <yellow>" + achievementPoints)
                 .build();
-        setItem(31, achievements);
+        setItem(31, achievements, (p, a) -> new AchievementsGUI(plugin, p).open(p));
     }
 }

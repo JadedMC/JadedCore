@@ -25,6 +25,7 @@
 package net.jadedmc.jadedcore.features.player;
 
 import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.features.achievements.Achievement;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -33,6 +34,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Represents a Player on the server. Stores plugin-specific data about them.
@@ -48,6 +51,7 @@ public class JadedPlayer {
     private int experience = 0;
     private int level = 1;
     private Timestamp firstJoined;
+    private final Collection<Achievement> achievements = new ArrayList<>();
 
     /**
      * Creates the JadedPlayer
@@ -101,6 +105,28 @@ public class JadedPlayer {
                 exception.printStackTrace();
             }
         }
+
+        // Achievements
+        try {
+            PreparedStatement statement = plugin.mySQL().getConnection().prepareStatement("SELECT * FROM player_achievements WHERE uuid = ?");
+            statement.setString(1, player.getUniqueId().toString());
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next()) {
+                Achievement achievement = plugin.achievementManager().getAchievement(resultSet.getString("achievementID"));
+
+                if(achievement != null) {
+                    achievements.add(achievement);
+                }
+            }
+        }
+        catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public Collection<Achievement> getAchievements() {
+        return achievements;
     }
 
     public int getExperience() {

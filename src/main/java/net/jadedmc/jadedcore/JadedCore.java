@@ -25,6 +25,7 @@
 package net.jadedmc.jadedcore;
 
 import net.jadedmc.jadedcore.commands.AbstractCommand;
+import net.jadedmc.jadedcore.features.achievements.AchievementManager;
 import net.jadedmc.jadedcore.features.player.JadedPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
@@ -34,6 +35,7 @@ public final class JadedCore extends JavaPlugin{
     private MySQL mySQL;
     private SettingsManager settingsManager;
     private JadedPlayerManager jadedPlayerManager;
+    private AchievementManager achievementManager;
 
     @Override
     public void onEnable() {
@@ -46,6 +48,8 @@ public final class JadedCore extends JavaPlugin{
         mySQL = new MySQL(this);
         mySQL.openConnection();
 
+        achievementManager = new AchievementManager(this);
+
         AbstractCommand.registerCommands(this);
 
         getServer().getPluginManager().registerEvents(new GUIListeners(), this);
@@ -57,6 +61,10 @@ public final class JadedCore extends JavaPlugin{
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
         new Placeholders(this).register();
+    }
+
+    public AchievementManager achievementManager() {
+        return achievementManager;
     }
 
     /**

@@ -10,7 +10,8 @@ public enum Game {
     TURFWARS("Turf Wars", XMaterial.BOW, GameType.COMPETITIVE, "Advance your team's territory by killing other players.", "turfwars"),
     CACTUS_RUSH("Cactus Rush", XMaterial.CACTUS, GameType.COMPETITIVE, "Team-Based Cactus Fighting Minigame.", "cactusrush"),
     HOUSING("Housing", XMaterial.DARK_OAK_DOOR, GameType.PERSISTENT, "Create in your own mini-world, or visit someone else's!", "housing"),
-    LOBBY("Main Lobby", XMaterial.CRAFTING_TABLE, GameType.NONE, "", "lobby");
+    LOBBY("Main Lobby", XMaterial.CRAFTING_TABLE, GameType.NONE, "", "lobby"),
+    GENERAL("General", XMaterial.BOOK, GameType.NONE, "", "");
 
     private final String name;
     private final XMaterial iconMaterial;
