@@ -29,6 +29,8 @@ import net.jadedmc.jadedcore.features.achievements.AchievementManager;
 import net.jadedmc.jadedcore.features.player.JadedPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
+import net.jadedmc.jadedutils.chat.ChatUtils;
+import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class JadedCore extends JavaPlugin{
@@ -40,6 +42,11 @@ public final class JadedCore extends JavaPlugin{
     @Override
     public void onEnable() {
         // Plugin startup logic
+
+        // Initialize an audiences instance for the plugin
+        BukkitAudiences adventure = BukkitAudiences.create(this);
+        ChatUtils.setAdventure(adventure);
+
         new JadedAPI(this);
 
         settingsManager = new SettingsManager(this);

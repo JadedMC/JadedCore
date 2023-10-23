@@ -29,8 +29,8 @@ import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import net.jadedmc.jadedcore.utils.gui.CustomGUI;
 import net.jadedmc.jadedcore.utils.item.ItemBuilder;
-import net.jadedmc.jadedcore.utils.item.SkullBuilder;
 import net.jadedmc.jadedcore.utils.xseries.XMaterial;
+import net.jadedmc.jadedutils.items.SkullBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -97,18 +97,21 @@ public class ChatLogCMD extends AbstractCommand {
 
                 if(page == 1) {
                     ItemStack previous = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0=")
+                            .asItemBuilder()
                             .setDisplayName("&cPrevious Page")
                             .build();
                     setItem(48, previous);
                 }
                 else {
                     ItemStack previous = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzU0YWFhYjM5NzY0NjQxZmY4NjI3OTMyZDJmZTFhNGNjY2VkOTY1Mzc1MDhkNGFiYzZjZDVmYmJiODc5MTMifX19")
+                            .asItemBuilder()
                             .setDisplayName("&aPrevious Page")
                             .build();
                     setItem(48, previous, (p,a) -> new ChatLogGUI(target, uuid, page-1).open(p));
                 }
 
                 ItemStack next = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTYzMzlmZjJlNTM0MmJhMThiZGM0OGE5OWNjYTY1ZDEyM2NlNzgxZDg3ODI3MmY5ZDk2NGVhZDNiOGFkMzcwIn19fQ==")
+                        .asItemBuilder()
                         .setDisplayName("&aNext Page")
                         .build();
                 setItem(50, next, (p,a) -> new ChatLogGUI(target, uuid, page+1).open(p));

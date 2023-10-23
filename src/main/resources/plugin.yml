@@ -2,7 +2,7 @@ name: JadedCore
 version: '${project.version}'
 main: net.jadedmc.jadedcore.JadedCore
 api-version: 1.19
-depend: [ PlaceholderAPI, LuckPerms ]
+depend: [ PlaceholderAPI, LuckPerms , JadedChat]
 authors: [ JadedMC ]
 website: http://www.jadedmc.net
 

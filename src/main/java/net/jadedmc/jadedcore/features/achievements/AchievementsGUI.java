@@ -5,9 +5,9 @@ import net.jadedmc.jadedcore.features.ProfileGUI;
 import net.jadedmc.jadedcore.features.games.Game;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedcore.utils.gui.CustomGUI;
-import net.jadedmc.jadedcore.utils.item.SkullBuilder;
 import net.jadedmc.jadedutils.MathUtils;
 import net.jadedmc.jadedutils.items.ItemBuilder;
+import net.jadedmc.jadedutils.items.SkullBuilder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -28,6 +28,7 @@ public class AchievementsGUI extends CustomGUI {
         int[] gameSlots = new int[]{19,20,21,22,23,24,25,28,29,30,31,32,33,34};
 
         ItemStack back = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0=")
+                .asItemBuilder()
                 .setDisplayName("&cBack")
                 .build();
         setItem(0, back, (p, a) -> new ProfileGUI(plugin, p).open(p));
@@ -74,6 +75,7 @@ public class AchievementsGUI extends CustomGUI {
 
         addFiller(1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
         ItemStack back = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0=")
+                .asItemBuilder()
                 .setDisplayName("&cBack")
                 .build();
         setItem(0, back, (p, a) -> new AchievementsGUI(plugin, p).open(p));
