@@ -62,7 +62,7 @@ public class AchievementsGUI extends CustomGUI {
                     .addLore("<gray>Unlocked: <green>" + playerAchievements.size() + "<gray>/<green>" + totalAchievements.size() + " <dark_gray>(" + MathUtils.percent(playerAchievements.size(), totalAchievements.size()) + "%)")
                     .addLore("<gray>Points: <yellow>" + playerPoints + "<gray>/<yellow>" + totalPoints + " <dark_gray>(" + MathUtils.percent(playerPoints, totalPoints) + "%)")
                     .addLore("")
-                    .addLore("&aClick to view achievements!")
+                    .addLore("<green>Click to view achievements!")
                     .build();
             setItem(gameSlots[i], item, (p,a) -> new AchievementsGUI(plugin, p, game).open(p));
             i++;
