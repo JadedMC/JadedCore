@@ -94,7 +94,7 @@
         <dependency>
             <groupId>com.github.JadedMC</groupId>
             <artifactId>JadedUtils</artifactId>
-            <version>7ba02e5053</version>
+            <version>b359a8ebbe</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
