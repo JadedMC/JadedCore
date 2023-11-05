@@ -24,20 +24,32 @@
  */
 package net.jadedmc.jadedcore.listeners;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+/**
+ * Listens to the PlayerJoinEvent, which is called when a player joins the server.
+ * Used to load the JadedPlayer of that player.
+ */
 public class PlayerJoinListener implements Listener {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
-    public PlayerJoinListener(JadedCore plugin) {
+    /**
+     * Creates the Listener.
+     * @param plugin Instance of the plugin.
+     */
+    public PlayerJoinListener(JadedCorePlugin plugin) {
         this.plugin = plugin;
     }
 
+    /**
+     * Runs when the PlayerJoinEvent is called.
+     * @param event PlayerJoinEvent.
+     */
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         event.setJoinMessage(null);

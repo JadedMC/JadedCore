@@ -34,9 +34,9 @@ import org.bukkit.entity.Player;
 import java.sql.Connection;
 
 public class JadedAPI {
-    private static JadedCore plugin = null;
+    private static JadedCorePlugin plugin = null;
 
-    public JadedAPI(JadedCore pl) {
+    public JadedAPI(JadedCorePlugin pl) {
         plugin = pl;
     }
 
@@ -44,7 +44,7 @@ public class JadedAPI {
         return plugin.mySQL().getConnection();
     }
 
-    public static JadedCore getPlugin() {
+    public static JadedCorePlugin getPlugin() {
         return plugin;
     }
 

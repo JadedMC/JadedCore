@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands.misc;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import org.bukkit.command.CommandSender;
@@ -35,9 +35,9 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class APICMD extends AbstractCommand {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
-    public APICMD(JadedCore plugin) {
+    public APICMD(JadedCorePlugin plugin) {
         super("api", "", false);
         this.plugin = plugin;
     }

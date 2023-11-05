@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedutils.chat.ChatUtils;
@@ -32,12 +32,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class RankCMD extends AbstractCommand {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
     /**
      * Creates the /rank, which is a debug command for ranks.
      */
-    public RankCMD(final JadedCore plugin) {
+    public RankCMD(final JadedCorePlugin plugin) {
         super("rank", "jadedcore.rank", false);
         this.plugin = plugin;
     }

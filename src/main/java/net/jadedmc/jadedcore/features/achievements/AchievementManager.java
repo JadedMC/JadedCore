@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.features.achievements;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.features.games.Game;
 
 import java.sql.PreparedStatement;
@@ -39,14 +39,14 @@ import java.util.Map;
  * Manages the creation and access of Achievements.
  */
 public class AchievementManager {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
     private final Map<String, Achievement> achievements = new LinkedHashMap<>();
 
     /**
      * Creates the Achievement Manager.
      * @param plugin Instance of the plugin.
      */
-    public AchievementManager(final JadedCore plugin) {
+    public AchievementManager(final JadedCorePlugin plugin) {
         this.plugin = plugin;
 
         createAchievement(Game.GENERAL, "general_3", "Am I in Trouble?", "Beat a staff member in a game.", 5);

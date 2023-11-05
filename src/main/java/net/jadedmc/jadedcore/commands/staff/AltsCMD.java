@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.command.CommandSender;
@@ -37,13 +37,13 @@ import java.sql.SQLException;
  * This class runs the alts command, which allows to check all accounts using the same ip.
  */
 public class AltsCMD extends AbstractCommand {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
     /**
      * Creates the /alts command with the permission "jadedcore.alts".
      * @param plugin Instance of the plugin.
      */
-    public AltsCMD(JadedCore plugin) {
+    public AltsCMD(JadedCorePlugin plugin) {
         super("alts", "jadedcore.alts", true);
 
         this.plugin = plugin;

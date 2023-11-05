@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.misc.*;
 import net.jadedmc.jadedcore.commands.staff.*;
 import net.jadedmc.jadedutils.chat.ChatUtils;
@@ -37,7 +37,7 @@ public abstract class AbstractCommand implements CommandExecutor {
     private final String commandName;
     private final String permission;
     private final boolean canConsoleUse;
-    private static JadedCore plugin;
+    private static JadedCorePlugin plugin;
 
     /**
      * Creates a new AbstractCommand.
@@ -56,7 +56,7 @@ public abstract class AbstractCommand implements CommandExecutor {
      * Registers all commands in the plugin.
      * @param pl Plugin.
      */
-    public static void registerCommands(JadedCore pl) {
+    public static void registerCommands(JadedCorePlugin pl) {
         plugin = pl;
         new AltsCMD(pl);
         new APICMD(pl);

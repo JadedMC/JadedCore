@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import net.jadedmc.jadedcore.utils.gui.CustomGUI;
@@ -42,9 +42,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ChatLogCMD extends AbstractCommand {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
-    public ChatLogCMD(JadedCore plugin) {
+    public ChatLogCMD(JadedCorePlugin plugin) {
         super("chatlog", "jadedcore.chatlog", false);
         this.plugin = plugin;
     }

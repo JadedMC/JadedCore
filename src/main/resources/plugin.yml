@@ -1,6 +1,6 @@
 name: JadedCore
 version: '${project.version}'
-main: net.jadedmc.jadedcore.JadedCore
+main: net.jadedmc.jadedcore.JadedCorePlugin
 api-version: 1.19
 depend: [ PlaceholderAPI, LuckPerms , JadedChat]
 authors: [ JadedMC ]

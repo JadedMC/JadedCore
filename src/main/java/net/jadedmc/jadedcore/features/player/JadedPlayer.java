@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.features.player;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.features.achievements.Achievement;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
@@ -42,7 +42,7 @@ import java.util.Collection;
  * Should only be created async.
  */
 public class JadedPlayer {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
     private final Player player;
     private Rank rank;
 
@@ -58,7 +58,7 @@ public class JadedPlayer {
      * @param plugin Instance of the plugin.
      * @param player Player object to use.
      */
-    public JadedPlayer(final JadedCore plugin, final Player player) {
+    public JadedPlayer(final JadedCorePlugin plugin, final Player player) {
         this.plugin = plugin;
         this.player = player;
 

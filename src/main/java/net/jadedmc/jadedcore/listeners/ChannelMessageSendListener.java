@@ -25,7 +25,7 @@
 package net.jadedmc.jadedcore.listeners;
 
 import net.jadedmc.jadedchat.features.channels.events.ChannelMessageSendEvent;
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -33,13 +33,13 @@ import org.bukkit.event.Listener;
  * Listens to the ChannelMessageSendEvent, which is called every time a player sends a message in a chat channel.
  */
 public class ChannelMessageSendListener implements Listener {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
     /**
      * Creates the Listener.
      * @param plugin Instance of the plugin.
      */
-    public ChannelMessageSendListener(final JadedCore plugin) {
+    public ChannelMessageSendListener(final JadedCorePlugin plugin) {
         this.plugin = plugin;
     }
 

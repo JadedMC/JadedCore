@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * plugins onEnable-method.
  */
 class Placeholders extends PlaceholderExpansion {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
     /**
      * Since we register the expansion inside our own plugin, we
@@ -21,7 +21,7 @@ class Placeholders extends PlaceholderExpansion {
      * @param plugin
      *        The instance of our plugin.
      */
-    public Placeholders(final JadedCore plugin){
+    public Placeholders(final JadedCorePlugin plugin){
         this.plugin = plugin;
     }
 

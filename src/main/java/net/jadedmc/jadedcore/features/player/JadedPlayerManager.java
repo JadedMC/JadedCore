@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.features.player;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
@@ -36,14 +36,14 @@ import java.util.concurrent.CompletableFuture;
  * This class manages the Jaded Player object, which stores general data for players, such as their current rank.
  */
 public class JadedPlayerManager {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
     private final Map<Player, JadedPlayer> jadedPlayers = new HashMap<>();
 
     /**
      * Initializes the Jaded Player Manager.
      * @param plugin Instance of the plugin.
      */
-    public JadedPlayerManager(final JadedCore plugin) {
+    public JadedPlayerManager(final JadedCorePlugin plugin) {
         this.plugin = plugin;
     }
 

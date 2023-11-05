@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedutils.chat.ChatUtils;
@@ -35,13 +35,13 @@ import org.bukkit.entity.Player;
  * This class runs the commandspy command, which spies on all commands being used.
  */
 public class CommandSpyCMD extends AbstractCommand {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
     /**
      * Creates the /commandspy command with the permission "jadedcore.commandspy".
      * @param plugin Instance of the plugin.
      */
-    public CommandSpyCMD(JadedCore plugin) {
+    public CommandSpyCMD(JadedCorePlugin plugin) {
         super("commandspy", "jadedcore.commandspy", false);
         this.plugin = plugin;
     }

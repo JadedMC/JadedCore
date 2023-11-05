@@ -31,7 +31,7 @@ import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class JadedCore extends JavaPlugin{
+public final class JadedCorePlugin extends JavaPlugin{
     private MySQL mySQL;
     private SettingsManager settingsManager;
     private JadedPlayerManager jadedPlayerManager;
@@ -56,7 +56,7 @@ public final class JadedCore extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new ChannelMessageSendListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListeners(), this);
         getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
 
@@ -65,6 +65,10 @@ public final class JadedCore extends JavaPlugin{
         new Placeholders(this).register();
     }
 
+    /**
+     * Get the Achievement Manager, which controls Achievements.
+     * @return AchievementManager.
+     */
     public AchievementManager achievementManager() {
         return achievementManager;
     }

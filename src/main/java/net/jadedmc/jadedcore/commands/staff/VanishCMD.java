@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.commands.staff;
 
-import net.jadedmc.jadedcore.JadedCore;
+import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedutils.chat.ChatUtils;
@@ -35,13 +35,13 @@ import org.bukkit.entity.Player;
  * This class runs the vanish command, which hides a player from all others.
  */
 public class VanishCMD extends AbstractCommand {
-    private final JadedCore plugin;
+    private final JadedCorePlugin plugin;
 
     /**
      * Creates the /vanish command with the permission "elytracore.vanish".
      * @param plugin Instance of the plugin.
      */
-    public VanishCMD(JadedCore plugin) {
+    public VanishCMD(JadedCorePlugin plugin) {
         super("vanish", "jadedcore.vanish", false);
         this.plugin = plugin;
     }
