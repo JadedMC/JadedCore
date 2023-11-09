@@ -86,3 +86,5 @@ commands:
     description: Debug command for the rank system.
   profile:
     description: View a player's profile.
+  website:
+    description: View a link to the server website.
