@@ -88,3 +88,5 @@ commands:
     description: View a player's profile.
   website:
     description: View a link to the server website.
+  store:
+    description: View a link to the server store.
