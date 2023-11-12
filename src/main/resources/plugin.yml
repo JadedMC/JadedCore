@@ -50,6 +50,7 @@ commands:
   games:
     description: View the games available on the server.
     usage: /<command>
+    aliases: [play]
   heal:
     description: Heals a player
     usage: /<command>
