@@ -115,6 +115,10 @@ class Placeholders extends PlaceholderExpansion {
             return jadedPlayer.getRank().getChatColor();
         }
 
+        if(identifier.contains("rank_color")) {
+            return jadedPlayer.getRank().getChatColor();
+        }
+
         return null;
     }
 }
