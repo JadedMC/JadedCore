@@ -72,6 +72,11 @@ public class AchievementsGUI extends CustomGUI {
             List<Achievement> totalAchievements = plugin.achievementManager().getAchievements(game);
             List<Achievement> playerAchievements = new ArrayList<>();
 
+            // Skip games with 0 achievements.
+            if(totalAchievements.size() == 0) {
+                continue;
+            }
+
             int playerPoints = 0;
 
             for(Achievement achievement : jadedPlayer.getAchievements()) {
