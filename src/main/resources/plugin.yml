@@ -78,6 +78,7 @@ commands:
     permission: jadedcore.workbench
   center:
     description: Center yourself on a block.
+    permission: jadedcore.center
   rules:
     description: View the server rules.
   discord:
