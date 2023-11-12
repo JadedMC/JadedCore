@@ -15,11 +15,19 @@ public class GamesGUI extends CustomGUI {
 
         addFiller(0,1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
 
-        addGame(20, Game.ELYTRAPVP);
+        addGame(20, Game.CACTUS_RUSH);
+        addGame(21, Game.ELYTRAPVP);
         //addGame(22, Game.TURFWARS);
-        addGame(22, Game.CACTUS_RUSH);
-        addGame(24, Game.HOUSING);
-        addGame(40, Game.LOBBY);
+        //addGame(24, Game.HOUSING);
+        addGame(31, Game.LOBBY);
+
+        ItemStack comingSoon = new ItemBuilder(XMaterial.GRAY_DYE)
+                .setDisplayName("&c&lComing Soon")
+                .build();
+
+        setItem(22, comingSoon);
+        setItem(23, comingSoon);
+        setItem(24, comingSoon);
     }
 
     private void addGame(int slot, Game game) {
