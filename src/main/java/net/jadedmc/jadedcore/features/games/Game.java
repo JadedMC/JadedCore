@@ -11,7 +11,10 @@ public enum Game {
     CACTUS_RUSH("Cactus Rush", XMaterial.CACTUS, GameType.COMPETITIVE, "Team-Based Cactus Fighting Minigame.", "cactusrush"),
     HOUSING("Housing", XMaterial.DARK_OAK_DOOR, GameType.PERSISTENT, "Create in your own mini-world, or visit someone else's!", "housing"),
     LOBBY("Main Lobby", XMaterial.CRAFTING_TABLE, GameType.NONE, "", "lobby"),
-    GENERAL("General", XMaterial.BOOK, GameType.NONE, "", "");
+    GENERAL("General", XMaterial.BOOK, GameType.NONE, "", ""),
+    DUELS("Duels", XMaterial.IRON_SWORD, GameType.COMPETITIVE, "", ""),
+    MODERN_DUELS("1.20 Duels", XMaterial.DIAMOND_SWORD, GameType.COMPETITIVE, "", "modernduels"),
+    LEGACY_DUELS("1.8 Duels", XMaterial.GOLDEN_SWORD, GameType.COMPETITIVE, "", "legacyduels");
 
     private final String name;
     private final XMaterial iconMaterial;
