@@ -249,4 +249,14 @@ public class JadedPlayer {
             }
         });
     }
+
+    /**
+     * Update the player's current rank.
+     */
+    public void updateRank() {
+        plugin.getServer().getScheduler().runTaskAsynchronously(plugin, () -> {
+            // Update the player's rank.
+            this.rank = Rank.fromName(LuckPermsProvider.get().getUserManager().getUser(player.getUniqueId()).getPrimaryGroup());
+        });
+    }
 }

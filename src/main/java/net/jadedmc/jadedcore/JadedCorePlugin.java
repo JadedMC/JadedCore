@@ -29,6 +29,8 @@ import net.jadedmc.jadedcore.features.achievements.AchievementManager;
 import net.jadedmc.jadedcore.features.player.JadedPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class JadedCorePlugin extends JavaPlugin{
@@ -59,6 +61,8 @@ public final class JadedCorePlugin extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
+
+        new UserDataRecalculateListener(this, LuckPermsProvider.get());
 
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
