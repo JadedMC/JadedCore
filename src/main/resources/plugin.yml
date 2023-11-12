@@ -21,6 +21,7 @@ commands:
     description: Broadcast command.
     usage: /broadcast
     aliases: [bc]
+    permission: jadecore.broadcast
   chatlog:
     description: View the chat logs of a player.
     usage: /chatlog
