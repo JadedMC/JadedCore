@@ -36,6 +36,6 @@ public class StoreCMD extends AbstractCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        ChatUtils.chat(sender, "&a&lStore &8» &aCheck out our store! &fhttps://www.jadedmc.tebex.io");
+        ChatUtils.chat(sender, "&a&lStore &8» &aCheck out our store! &f<click:open_url:'https://jadedmc.tebex.io/'>https://jadedmc.tebex.io/</click>");
     }
 }

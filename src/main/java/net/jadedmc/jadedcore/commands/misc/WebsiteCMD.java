@@ -36,6 +36,6 @@ public class WebsiteCMD extends AbstractCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        ChatUtils.chat(sender, "&a&lWebsite &8» &aCheck out our website! &fhttps://www.jadedmc.net");
+        ChatUtils.chat(sender, "&a&lWebsite &8» &aCheck out our website! <click:open_url:'https://www.jadedmc.net'>https://www.jadedmc.net</click>");
     }
 }

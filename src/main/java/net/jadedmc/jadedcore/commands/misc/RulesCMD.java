@@ -36,6 +36,6 @@ public class RulesCMD extends AbstractCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        ChatUtils.chat(sender, "&a&lRules &8» &aYou can view the server rules at &fhttp://www.jadedmc.net/rules&a.");
+        ChatUtils.chat(sender, "&a&lRules &8» &aYou can view the server rules at &f<click:open_url:'http://www.jadedmc.net/rules'>http://www.jadedmc.net/rules</click>&a.");
     }
 }

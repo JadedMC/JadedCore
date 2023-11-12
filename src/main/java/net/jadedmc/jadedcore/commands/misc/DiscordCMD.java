@@ -36,6 +36,6 @@ public class DiscordCMD extends AbstractCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        ChatUtils.chat(sender, "&a&lDiscord &8» &aJoin our discord server at &fhttp://discord.gg/YWGFeNA &a.");
+        ChatUtils.chat(sender, "&a&lDiscord &8» &aJoin our discord server at &f<click:open_url:'http://discord.gg/YWGFeNA'>http://discord.gg/YWGFeNA</click>&a.");
     }
 }
