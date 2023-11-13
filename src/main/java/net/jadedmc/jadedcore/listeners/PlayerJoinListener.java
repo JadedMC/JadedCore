@@ -65,7 +65,13 @@ public class PlayerJoinListener implements Listener {
                 default -> ChatUtils.broadcast(player.getWorld(), "&8[&a+&8] &a" + player.getName());
             }
 
+            // Give the "A Whole New World" achievement.
             plugin.achievementManager().getAchievement("general_1").unlock(player);
+
+            // Give the "Veteran" achievement.
+            if(System.currentTimeMillis() - jadedPlayer.getFirstJoined().getTime() > Long.parseLong("31556952000")) {
+                plugin.achievementManager().getAchievement("general_5").unlock(player);
+            }
         });
     }
 }
