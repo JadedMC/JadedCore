@@ -43,7 +43,6 @@ import java.util.List;
  * Runs teh AchievementsGUI, which shows the player all existing achievements.
  */
 public class AchievementsGUI extends CustomGUI {
-    private final JadedCorePlugin plugin;
 
     /**
      * Creates the main GUI, displaying all the available games.
@@ -52,11 +51,10 @@ public class AchievementsGUI extends CustomGUI {
      */
     public AchievementsGUI(final JadedCorePlugin plugin, Player player) {
         super(54, "Achievements");
-        this.plugin = plugin;
 
         addFiller(1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
 
-        Game[] games = new Game[]{Game.GENERAL, Game.CACTUS_RUSH, Game.ELYTRAPVP, Game.HOUSING};
+        Game[] games = new Game[]{Game.GENERAL, Game.CACTUS_RUSH, Game.ELYTRAPVP, Game.HOUSING, Game.TURFWARS, Game.DUELS};
         int[] gameSlots = new int[]{19,20,21,22,23,24,25,28,29,30,31,32,33,34};
 
         ItemStack back = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0=")
@@ -71,11 +69,6 @@ public class AchievementsGUI extends CustomGUI {
         for(Game game : games) {
             List<Achievement> totalAchievements = plugin.achievementManager().getAchievements(game);
             List<Achievement> playerAchievements = new ArrayList<>();
-
-            // Skip games with 0 achievements.
-            if(totalAchievements.size() == 0) {
-                continue;
-            }
 
             int playerPoints = 0;
 
@@ -114,7 +107,6 @@ public class AchievementsGUI extends CustomGUI {
      */
     public AchievementsGUI(final JadedCorePlugin plugin, Player player, Game game) {
         super(54, "Achievements - " + game.getName());
-        this.plugin = plugin;
 
         addFiller(1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
         ItemStack back = new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0=")
