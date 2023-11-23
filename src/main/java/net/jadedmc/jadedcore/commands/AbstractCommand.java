@@ -81,6 +81,7 @@ public abstract class AbstractCommand implements CommandExecutor {
         new ProfileCMD(pl);
         new WebsiteCMD();
         new StoreCMD();
+        new DuelsCMD();
     }
 
     /**

@@ -1,3 +1,27 @@
+/*
+ * This file is part of JadedCore, licensed under the MIT License.
+ *
+ *  Copyright (c) JadedMC
+ *  Copyright (c) contributors
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ */
 package net.jadedmc.jadedcore.features.games;
 
 import net.jadedmc.jadedcore.utils.xseries.XMaterial;
@@ -12,9 +36,10 @@ public enum Game {
     HOUSING("Housing", XMaterial.DARK_OAK_DOOR, GameType.PERSISTENT, "Create in your own mini-world, or visit someone else's!", "housing"),
     LOBBY("Main Lobby", XMaterial.CRAFTING_TABLE, GameType.NONE, "", "lobby"),
     GENERAL("General", XMaterial.BOOK, GameType.NONE, "", ""),
-    DUELS("Duels", XMaterial.IRON_SWORD, GameType.COMPETITIVE, "", ""),
-    MODERN_DUELS("1.20 Duels", XMaterial.DIAMOND_SWORD, GameType.COMPETITIVE, "", "modernduels"),
-    LEGACY_DUELS("1.8 Duels", XMaterial.GOLDEN_SWORD, GameType.COMPETITIVE, "", "legacyduels");
+    DUELS("Duels", XMaterial.IRON_SWORD, GameType.COMPETITIVE, "Arena-Based PvP duels and tournaments!", ""),
+    MODERN_DUELS("1.20 Duels", XMaterial.DIAMOND_SWORD, GameType.COMPETITIVE, "Arena-Based pvp duels and tournaments for modern minecraft.", "modernduels"),
+    LEGACY_DUELS("1.8 Duels", XMaterial.GOLDEN_SWORD, GameType.COMPETITIVE, "", "legacyduels"),
+    TOURNAMENTS("1.8 Tournaments", XMaterial.GOLD_INGOT, GameType.COMPETITIVE, "Automated 1.8 PvP Tournaments, hosted by staff!", "tournament");
 
     private final String name;
     private final XMaterial iconMaterial;

@@ -93,3 +93,5 @@ commands:
     description: View a link to the server website.
   store:
     description: View a link to the server store.
+  duels:
+    description: Open the duels gui.
