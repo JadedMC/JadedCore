@@ -34,7 +34,7 @@ public enum Rank {
     TRIAL("trial", 8, "<gold><bold>Trial</bold></gold>", "<gold>", "<gold>"),
     BUILDER("builder", 7, "<yellow><bold>Builder</bold></yellow>", "<yellow>", "<yellow>"),
     DEVELOPER("developer", 6, "<yellow><bold>Developer</bold></yellow>", "<yellow>", "<yellow>"),
-    YOUTUBE("youtube", 5, "<bold><red>You</red><white>Tube</white></bold>", "<gray>", "<white>"),
+    YOUTUBE("youtube", 5, "<bold><red>You</red><white>Tube</white></bold>", "<white>", "<white>"),
     JADED("jaded", 4, "<green><bold>Jaded</bold></green>", "<gray>", "<green>"),
     SAPPHIRE("sapphire", 3, "<blue><bold>Sapphire</bold></blue>", "<gray>", "<blue>"),
     AMETHYST("amethyst", 2, "<dark_purple><bold>Amethyst</bold></dark_purple>", "<gray>", "<dark_purple>"),
