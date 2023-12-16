@@ -42,7 +42,7 @@ public class GamesGUI extends CustomGUI {
 
         addGame(20, Game.CACTUS_RUSH);
         addGame(21, Game.ELYTRAPVP);
-        //addGame(22, Game.TURFWARS);
+        addGame(23, Game.TURFWARS);
         //addGame(24, Game.HOUSING);
         addGame(31, Game.LOBBY);
 
@@ -51,7 +51,7 @@ public class GamesGUI extends CustomGUI {
                 .build();
 
         //setItem(22, comingSoon);
-        setItem(23, comingSoon);
+        //setItem(23, comingSoon);
         setItem(24, comingSoon);
 
         ItemStack duels = new ItemBuilder(XMaterial.IRON_SWORD)
