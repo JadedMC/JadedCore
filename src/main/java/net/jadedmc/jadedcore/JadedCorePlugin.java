@@ -26,6 +26,7 @@ package net.jadedmc.jadedcore;
 
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedcore.features.achievements.AchievementManager;
+import net.jadedmc.jadedcore.features.leaderboards.LeaderboardManager;
 import net.jadedmc.jadedcore.features.player.JadedPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
 import net.jadedmc.jadedcore.utils.gui.GUIListeners;
@@ -38,6 +39,7 @@ public final class JadedCorePlugin extends JavaPlugin{
     private SettingsManager settingsManager;
     private JadedPlayerManager jadedPlayerManager;
     private AchievementManager achievementManager;
+    private LeaderboardManager leaderboardManager;
 
     @Override
     public void onEnable() {
@@ -52,6 +54,7 @@ public final class JadedCorePlugin extends JavaPlugin{
         mySQL.openConnection();
 
         achievementManager = new AchievementManager(this);
+        leaderboardManager = new LeaderboardManager(this);
 
         AbstractCommand.registerCommands(this);
 
@@ -75,6 +78,14 @@ public final class JadedCorePlugin extends JavaPlugin{
      */
     public AchievementManager achievementManager() {
         return achievementManager;
+    }
+
+    /**
+     * Get the Leaderboard Manager, which controls leaderboards.
+     * @return Leaderboard Manager.
+     */
+    public LeaderboardManager leaderboardManager() {
+        return leaderboardManager;
     }
 
     /**
