@@ -96,7 +96,7 @@ public class AchievementsGUI extends CustomGUI {
                     .addLore("<green>Click to view achievements!")
                     .addFlag(ItemFlag.HIDE_ATTRIBUTES)
                     .build();
-            setItem(gameSlots[i], item, (p,a) -> new AchievementsGUI(plugin, p, game).open(p));
+            setItem(gameSlots[i], item, (p,a) -> new AchievementsGUI(plugin, p, game, 1).open(p));
             i++;
         }
     }
@@ -107,7 +107,7 @@ public class AchievementsGUI extends CustomGUI {
      * @param player Player to get achievements of.
      * @param game Game to get achievements of.
      */
-    public AchievementsGUI(final JadedCorePlugin plugin, Player player, Game game) {
+    public AchievementsGUI(final JadedCorePlugin plugin, Player player, Game game, int page) {
         super(54, "Achievements - " + game.getName());
 
         addFiller(1,2,3,4,5,6,7,8,45,46,47,48,49,50,51,52,53);
@@ -119,8 +119,13 @@ public class AchievementsGUI extends CustomGUI {
 
         JadedPlayer jadedPlayer = plugin.jadedPlayerManager().getPlayer(player);
 
-        int i = 9;
+        int i = 9 - ((page - 1) * 44);
         for(Achievement achievement : plugin.achievementManager().getAchievements(game)) {
+
+            if(i < 9 || i > 44) {
+                i++;
+                continue;
+            }
 
             if(jadedPlayer.getAchievements().contains(achievement)) {
                 ItemBuilder builder = new ItemBuilder(Material.DIAMOND)
@@ -148,8 +153,21 @@ public class AchievementsGUI extends CustomGUI {
                 setItem(i, builder.build());
             }
 
-
             i++;
+        }
+
+        if(page == 1) {
+            setItem(48, new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0=").asItemBuilder().setDisplayName("&cNo more pages!").build());
+        }
+        else {
+            setItem(48, new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU1MGI3Zjc0ZTllZDc2MzNhYTI3NGVhMzBjYzNkMmU4N2FiYjM2ZDRkMWY0Y2E2MDhjZDQ0NTkwY2NlMGIifX19").asItemBuilder().setDisplayName("&aPage " + (page - 1)).build(), (p,a) -> new AchievementsGUI(plugin, p, game, page - 1).open(p));
+        }
+
+        if(plugin.achievementManager().getAchievements(game).size() > (page * 36)) {
+            setItem(50, new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTYzMzlmZjJlNTM0MmJhMThiZGM0OGE5OWNjYTY1ZDEyM2NlNzgxZDg3ODI3MmY5ZDk2NGVhZDNiOGFkMzcwIn19fQ==").asItemBuilder().setDisplayName("&aPage " + (page + 1)).build(), (p,a) -> new AchievementsGUI(plugin, p, game, page + 1).open(p));
+        }
+        else {
+            setItem(50, new SkullBuilder("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmNmZTg4NDVhOGQ1ZTYzNWZiODc3MjhjY2M5Mzg5NWQ0MmI0ZmMyZTZhNTNmMWJhNzhjODQ1MjI1ODIyIn19fQ==").asItemBuilder().setDisplayName("&cNo more pages!").build());
         }
     }
 }
