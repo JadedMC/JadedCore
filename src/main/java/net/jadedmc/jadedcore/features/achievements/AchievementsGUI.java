@@ -119,7 +119,7 @@ public class AchievementsGUI extends CustomGUI {
 
         JadedPlayer jadedPlayer = plugin.jadedPlayerManager().getPlayer(player);
 
-        int i = 9 - ((page - 1) * 44);
+        int i = 9 - ((page - 1) * 36);
         for(Achievement achievement : plugin.achievementManager().getSortedAchievements(game)) {
 
             if(i < 9 || i > 44) {
