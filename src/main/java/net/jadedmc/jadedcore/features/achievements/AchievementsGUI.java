@@ -128,7 +128,7 @@ public class AchievementsGUI extends CustomGUI {
             }
 
             if(jadedPlayer.getAchievements().contains(achievement)) {
-                ItemBuilder builder = new ItemBuilder(Material.DIAMOND)
+                ItemBuilder builder = new ItemBuilder(Material.DIAMOND, achievement.getPoints())
                         .setDisplayName("<green>" + achievement.getName())
                         .addLore("<gray>" + achievement.getDescription())
                         .addLore("")
@@ -140,7 +140,7 @@ public class AchievementsGUI extends CustomGUI {
                 setItem(i, builder.build());
             }
             else {
-                ItemBuilder builder = new ItemBuilder(Material.COAL)
+                ItemBuilder builder = new ItemBuilder(Material.COAL, achievement.getPoints())
                         .setDisplayName("<red>" + achievement.getName())
                         .addLore("<gray>" + achievement.getDescription())
                         .addLore("")
