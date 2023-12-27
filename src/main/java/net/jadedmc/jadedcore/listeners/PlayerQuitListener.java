@@ -25,6 +25,7 @@
 package net.jadedmc.jadedcore.listeners;
 
 import net.jadedmc.jadedcore.JadedCorePlugin;
+import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -53,9 +54,10 @@ public class PlayerQuitListener implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
+        JadedPlayer jadedPlayer = plugin.jadedPlayerManager().getPlayer(player);
 
         event.setQuitMessage(null);
-        ChatUtils.broadcast(player.getWorld(),"&8[&c-&8] &c" + player.getName());
+        ChatUtils.broadcast(player.getWorld(),"&8[&c-&8] &c" + jadedPlayer.getName());
 
         plugin.jadedPlayerManager().removePlayer(player);
     }
