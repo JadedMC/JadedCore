@@ -123,6 +123,10 @@ class Placeholders extends PlaceholderExpansion {
             return jadedPlayer.getName();
         }
 
+        if(identifier.contains("player_real_name")) {
+            return jadedPlayer.getRealName();
+        }
+
         if(identifier.contains("rank_displayname_legacy")) {
             return ChatUtils.toLegacy(jadedPlayer.getRank().getDisplayName());
         }

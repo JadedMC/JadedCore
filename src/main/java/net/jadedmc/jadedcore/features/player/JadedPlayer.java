@@ -37,7 +37,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Objects;
 
 /**
  * Represents a Player on the server. Stores plugin-specific data about them.
@@ -160,6 +159,11 @@ public class JadedPlayer {
         return firstJoined;
     }
 
+    /**
+     * Get the player's displayed username.
+     * Works with Nicks if enabled.
+     * @return The username that should be displayed.
+     */
     public String getName() {
         if(plugin.hookManager().useHyNick()) {
             return PlaceholderAPI.setPlaceholders(player, "%hynick_name%");
@@ -192,6 +196,14 @@ public class JadedPlayer {
         }
 
         return rank;
+    }
+
+    /**
+     * Get the player's real name.
+     * @return Player's real username.
+     */
+    public String getRealName() {
+        return player.getName();
     }
 
     /**
