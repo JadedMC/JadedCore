@@ -7,7 +7,6 @@ authors: [ JadedMC ]
 website: http://www.jadedmc.net
 
 softdepend:
-  - DiscordSRV
   - JadedPartyBukkit
   - HyNick
   - LuckPerms
