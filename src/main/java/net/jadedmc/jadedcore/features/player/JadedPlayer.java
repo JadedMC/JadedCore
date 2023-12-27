@@ -24,6 +24,7 @@
  */
 package net.jadedmc.jadedcore.features.player;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.features.achievements.Achievement;
 import net.luckperms.api.LuckPermsProvider;
@@ -36,6 +37,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 /**
  * Represents a Player on the server. Stores plugin-specific data about them.
@@ -158,6 +160,14 @@ public class JadedPlayer {
         return firstJoined;
     }
 
+    public String getName() {
+        if(plugin.hookManager().useHyNick()) {
+            return PlaceholderAPI.setPlaceholders(player, "%hynick_name%");
+        }
+
+        return player.getName();
+    }
+
     /**
      * Get the player data is being stored for.
      * @return Player of the JadedPlayer.
@@ -171,6 +181,16 @@ public class JadedPlayer {
      * @return Player's rank.
      */
     public Rank getRank() {
+        if(plugin.hookManager().useHyNick()) {
+            String rankString = PlaceholderAPI.setPlaceholders(player, "%hynick_rank%").toUpperCase();
+
+            if(!Rank.exists(rankString)) {
+                return rank;
+            }
+
+            return Rank.valueOf(rankString);
+        }
+
         return rank;
     }
 

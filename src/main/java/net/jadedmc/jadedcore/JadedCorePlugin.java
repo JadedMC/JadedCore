@@ -40,6 +40,7 @@ public final class JadedCorePlugin extends JavaPlugin{
     private JadedPlayerManager jadedPlayerManager;
     private AchievementManager achievementManager;
     private LeaderboardManager leaderboardManager;
+    private HookManager hookManager;
 
     @Override
     public void onEnable() {
@@ -55,6 +56,7 @@ public final class JadedCorePlugin extends JavaPlugin{
 
         achievementManager = new AchievementManager(this);
         leaderboardManager = new LeaderboardManager(this);
+        hookManager = new HookManager(this);
 
         AbstractCommand.registerCommands(this);
 
@@ -79,6 +81,10 @@ public final class JadedCorePlugin extends JavaPlugin{
      */
     public AchievementManager achievementManager() {
         return achievementManager;
+    }
+
+    public HookManager hookManager() {
+        return hookManager;
     }
 
     /**
