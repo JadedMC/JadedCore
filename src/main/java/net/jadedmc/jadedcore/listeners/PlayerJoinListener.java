@@ -25,6 +25,7 @@
 package net.jadedmc.jadedcore.listeners;
 
 import net.jadedmc.jadedcore.JadedCorePlugin;
+import net.jadedmc.jadedcore.events.JadedJoinEvent;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -73,6 +74,10 @@ public class PlayerJoinListener implements Listener {
             if(System.currentTimeMillis() - jadedPlayer.getFirstJoined().getTime() > Long.parseLong("31556952000")) {
                 plugin.achievementManager().getAchievement("general_5").unlock(player);
             }
+
+            plugin.getServer().getScheduler().runTask(plugin, () -> {
+                plugin.getServer().getPluginManager().callEvent(new JadedJoinEvent(jadedPlayer));
+            });
         });
     }
 }
