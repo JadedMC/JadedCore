@@ -28,6 +28,7 @@ import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -50,7 +51,7 @@ public class PlayerJoinListener implements Listener {
      * Runs when the PlayerJoinEvent is called.
      * @param event PlayerJoinEvent.
      */
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onJoin(PlayerJoinEvent event) {
         event.setJoinMessage(null);
 
@@ -59,10 +60,10 @@ public class PlayerJoinListener implements Listener {
 
             // Join Message
             switch (jadedPlayer.getRank()) {
-                case AMETHYST -> ChatUtils.broadcast(player.getWorld(), "&5>&f>&5> &lAmethyst &7" + player.getName() + " &ahas joined the lobby! &5<&f<&5<");
-                case SAPPHIRE -> ChatUtils.broadcast(player.getWorld(), "&9>&f>&9> &lSapphire &7" + player.getName() + " &ahas joined the lobby! &9<&f<&9<");
-                case JADED -> ChatUtils.broadcast(player.getWorld(), "&a>&f>&a> &lJaded &7" + player.getName() + " &ahas joined the lobby! &a<&f<&a<");
-                default -> ChatUtils.broadcast(player.getWorld(), "&8[&a+&8] &a" + player.getName());
+                case AMETHYST -> ChatUtils.broadcast(player.getWorld(), "&5>&f>&5> &lAmethyst &7" + jadedPlayer.getName() + " &ahas joined the lobby! &5<&f<&5<");
+                case SAPPHIRE -> ChatUtils.broadcast(player.getWorld(), "&9>&f>&9> &lSapphire &7" + jadedPlayer.getName() + " &ahas joined the lobby! &9<&f<&9<");
+                case JADED -> ChatUtils.broadcast(player.getWorld(), "&a>&f>&a> &lJaded &7" + jadedPlayer.getName() + " &ahas joined the lobby! &a<&f<&a<");
+                default -> ChatUtils.broadcast(player.getWorld(), "&8[&a+&8] &a" + jadedPlayer.getName());
             }
 
             // Give the "A Whole New World" achievement.
