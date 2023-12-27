@@ -102,5 +102,10 @@
             <artifactId>JadedChat</artifactId>
             <version>0.6</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.JadedMC</groupId>
+            <artifactId>JadedPartyBukkit</artifactId>
+            <version>985deb6020</version>
+        </dependency>
     </dependencies>
 </project>

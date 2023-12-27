@@ -60,6 +60,7 @@ public final class JadedCorePlugin extends JavaPlugin{
 
         getServer().getPluginManager().registerEvents(new ChannelMessageSendListener(this), this);
         getServer().getPluginManager().registerEvents(new GUIListeners(), this);
+        getServer().getPluginManager().registerEvents(new PartySyncListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
