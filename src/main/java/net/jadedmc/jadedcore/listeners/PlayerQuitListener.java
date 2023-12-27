@@ -29,6 +29,7 @@ import net.jadedmc.jadedcore.features.player.JadedPlayer;
 import net.jadedmc.jadedutils.chat.ChatUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -51,7 +52,7 @@ public class PlayerQuitListener implements Listener {
      * Runs when the PlayerQuitEvent is called.
      * @param event PlayerQuitEvent.
      */
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         JadedPlayer jadedPlayer = plugin.jadedPlayerManager().getPlayer(player);
