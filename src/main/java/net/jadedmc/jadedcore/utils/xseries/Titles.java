@@ -48,6 +48,7 @@ import java.util.function.Function;
  * @version 3.0.0
  * @see ReflectionUtils
  */
+@Deprecated
 public final class Titles implements Cloneable {
     /**
      * EnumTitleAction

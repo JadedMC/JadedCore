@@ -4,6 +4,7 @@ package net.jadedmc.jadedcore.utils.chat;
  * Stores information about the default font.
  * Used when centering text.
  */
+@Deprecated
 public enum DefaultFontInfo {
     A('A', 5),
     a('a', 5),

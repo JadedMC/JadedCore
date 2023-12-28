@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@Deprecated
 public abstract class CustomGUI {
     private static Map<UUID, CustomGUI> inventories = new HashMap<>();
     private static Map<UUID, UUID> openInventories = new HashMap<>();

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Deprecated
 public class SkullBuilder {
     private ItemStack item;
     private SkullMeta meta;

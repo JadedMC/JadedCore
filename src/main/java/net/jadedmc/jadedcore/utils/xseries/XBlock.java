@@ -52,7 +52,7 @@ import java.util.*;
  * @see MaterialData
  * @see XMaterial
  */
-@SuppressWarnings("deprecation")
+@Deprecated
 public final class XBlock {
     public static final Set<XMaterial> CROPS = Collections.unmodifiableSet(EnumSet.of(
             XMaterial.CARROT, XMaterial.POTATO, XMaterial.NETHER_WART, XMaterial.WHEAT_SEEDS, XMaterial.PUMPKIN_SEEDS,

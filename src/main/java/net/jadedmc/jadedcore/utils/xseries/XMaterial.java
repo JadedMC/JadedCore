@@ -65,6 +65,7 @@ import java.util.stream.Collectors;
  * @see Material
  * @see ItemStack
  */
+@Deprecated
 public enum XMaterial {
     ACACIA_BOAT("BOAT_ACACIA"),
     ACACIA_BUTTON("WOOD_BUTTON"),

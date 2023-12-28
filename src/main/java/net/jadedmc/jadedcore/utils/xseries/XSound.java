@@ -58,6 +58,7 @@ import java.util.stream.Collectors;
  * @version 9.0.0
  * @see Sound
  */
+@Deprecated
 public enum XSound {
     AMBIENT_BASALT_DELTAS_ADDITIONS,
     AMBIENT_BASALT_DELTAS_LOOP,

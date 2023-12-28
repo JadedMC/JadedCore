@@ -8,6 +8,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.UUID;
 
+@Deprecated
 public class GUIListeners implements Listener {
     @EventHandler
     public void onClick(InventoryClickEvent e) {

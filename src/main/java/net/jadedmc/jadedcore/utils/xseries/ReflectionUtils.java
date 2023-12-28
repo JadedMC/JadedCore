@@ -48,6 +48,7 @@ import java.util.concurrent.CompletableFuture;
  * @author Crypto Morin
  * @version 6.0.1
  */
+@Deprecated
 public final class ReflectionUtils {
     /**
      * We use reflection mainly to avoid writing a new class for version barrier.

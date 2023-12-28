@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Deprecated
 public class ChatUtils {
     private final static int CENTER_PX = 154;
 

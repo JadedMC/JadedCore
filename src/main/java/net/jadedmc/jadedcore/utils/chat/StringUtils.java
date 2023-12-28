@@ -3,6 +3,7 @@ package net.jadedmc.jadedcore.utils.chat;
 import java.util.Arrays;
 import java.util.List;
 
+@Deprecated
 public class StringUtils {
 
     public static String join(List<String> args, String separator) {
