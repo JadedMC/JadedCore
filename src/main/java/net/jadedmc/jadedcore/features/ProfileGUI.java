@@ -28,7 +28,7 @@ import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.features.achievements.Achievement;
 import net.jadedmc.jadedcore.features.achievements.AchievementsGUI;
 import net.jadedmc.jadedcore.features.player.JadedPlayer;
-import net.jadedmc.jadedcore.utils.gui.CustomGUI;
+import net.jadedmc.jadedutils.gui.CustomGUI;
 import net.jadedmc.jadedutils.items.ItemBuilder;
 import net.jadedmc.jadedutils.items.SkullBuilder;
 import org.bukkit.Material;

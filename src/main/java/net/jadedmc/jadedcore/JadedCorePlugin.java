@@ -29,8 +29,7 @@ import net.jadedmc.jadedcore.features.achievements.AchievementManager;
 import net.jadedmc.jadedcore.features.leaderboards.LeaderboardManager;
 import net.jadedmc.jadedcore.features.player.JadedPlayerManager;
 import net.jadedmc.jadedcore.listeners.*;
-import net.jadedmc.jadedcore.utils.gui.GUIListeners;
-import net.luckperms.api.LuckPerms;
+import net.jadedmc.jadedutils.gui.GUIListeners;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 

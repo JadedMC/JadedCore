@@ -24,12 +24,12 @@
  */
 package net.jadedmc.jadedcore.commands.staff;
 
+import com.cryptomorin.xseries.XMaterial;
 import net.jadedmc.jadedcore.JadedCorePlugin;
 import net.jadedmc.jadedcore.commands.AbstractCommand;
 import net.jadedmc.jadedutils.chat.ChatUtils;
-import net.jadedmc.jadedcore.utils.gui.CustomGUI;
-import net.jadedmc.jadedcore.utils.item.ItemBuilder;
-import net.jadedmc.jadedcore.utils.xseries.XMaterial;
+import net.jadedmc.jadedutils.gui.CustomGUI;
+import net.jadedmc.jadedutils.items.ItemBuilder;
 import net.jadedmc.jadedutils.items.SkullBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

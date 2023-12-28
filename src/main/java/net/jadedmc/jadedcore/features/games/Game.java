@@ -24,7 +24,7 @@
  */
 package net.jadedmc.jadedcore.features.games;
 
-import net.jadedmc.jadedcore.utils.xseries.XMaterial;
+import com.cryptomorin.xseries.XMaterial;
 
 /**
  * Represents a game on the network.

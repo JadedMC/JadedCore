@@ -1,4 +1,4 @@
-package net.jadedmc.jadedcore.utils.gui;
+package net.jadedmc.jadedutils.gui;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,7 +8,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.UUID;
 
-@Deprecated
 public class GUIListeners implements Listener {
     @EventHandler
     public void onClick(InventoryClickEvent e) {

@@ -1,8 +1,8 @@
-package net.jadedmc.jadedcore.utils.gui;
+package net.jadedmc.jadedutils.gui;
 
-import net.jadedmc.jadedcore.utils.chat.ChatUtils;
-import net.jadedmc.jadedcore.utils.item.ItemBuilder;
-import net.jadedmc.jadedcore.utils.xseries.XMaterial;
+import com.cryptomorin.xseries.XMaterial;
+import net.jadedmc.jadedutils.chat.ChatUtils;
+import net.jadedmc.jadedutils.items.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -15,14 +15,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@Deprecated
 public abstract class CustomGUI {
     private static Map<UUID, CustomGUI> inventories = new HashMap<>();
     private static Map<UUID, UUID> openInventories = new HashMap<>();
 
     private Inventory inventory;
     private UUID uuid;
-    private Map<Integer, ClickAction> actions;
+    private Map<Integer, CustomGUI.ClickAction> actions;
 
     /**
      * Creates a new custom GUI
@@ -56,7 +55,7 @@ public abstract class CustomGUI {
         }
     }
 
-    public Map<Integer, ClickAction> getActions() {
+    public Map<Integer, CustomGUI.ClickAction> getActions() {
         return actions;
     }
 
@@ -73,7 +72,7 @@ public abstract class CustomGUI {
         return uuid;
     }
 
-    public void setItem(int slot, ItemStack item, ClickAction action) {
+    public void setItem(int slot, ItemStack item, CustomGUI.ClickAction action) {
         inventory.setItem(slot, item);
 
         if(actions != null) {
