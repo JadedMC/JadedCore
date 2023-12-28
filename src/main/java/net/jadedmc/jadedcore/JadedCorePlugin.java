@@ -60,15 +60,7 @@ public final class JadedCorePlugin extends JavaPlugin{
 
         AbstractCommand.registerCommands(this);
 
-        getServer().getPluginManager().registerEvents(new ChannelMessageSendListener(this), this);
-        getServer().getPluginManager().registerEvents(new GUIListeners(), this);
-        getServer().getPluginManager().registerEvents(new PartySyncListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
-
-        new UserDataRecalculateListener(this, LuckPermsProvider.get());
+        registerListeners();
 
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
@@ -76,6 +68,29 @@ public final class JadedCorePlugin extends JavaPlugin{
 
         // Updates scoreboards every second
         new ScoreboardUpdate().runTaskTimer(this, 20L, 20L);
+    }
+
+    /**
+     * Registers all event listeners used by the plugin.
+     */
+    private void registerListeners() {
+        // Bukkit Listeners
+        getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
+
+        // JadedUtils Listeners
+        getServer().getPluginManager().registerEvents(new GUIListeners(), this);
+
+        // JadedParty Listeners
+        getServer().getPluginManager().registerEvents(new PartySyncListener(this), this);
+
+        // JadedChat Listeners
+        getServer().getPluginManager().registerEvents(new ChannelMessageSendListener(this), this);
+
+        // LuckPerms listeners.
+        new UserDataRecalculateListener(this, LuckPermsProvider.get());
     }
 
     /**
